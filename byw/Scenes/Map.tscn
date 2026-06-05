@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c6kunuf7ho2t0"]
 
+[ext_resource type="Script" uid="uid://bgo52ectxnmul" path="res://Scripts/map.gd" id="1_5t7yc"]
 [ext_resource type="Texture2D" uid="uid://dqmh5dgtj4drx" path="res://Assets/Water.png" id="1_7yn8b"]
 [ext_resource type="Texture2D" uid="uid://c2rwelw6j26os" path="res://Assets/Tilemap_grass.png" id="2_etk83"]
 [ext_resource type="Texture2D" uid="uid://bwcyy46mqnngf" path="res://Assets/Tree_2.png" id="3_00287"]
@@ -234,6 +235,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_00287")
 
 [node name="Node2D" type="Node2D" unique_id=866389142]
+script = ExtResource("1_5t7yc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=580758806]
 position = Vector2(578, 323)

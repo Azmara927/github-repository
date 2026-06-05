@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cs04d1e3c3tpw"]
+
+[ext_resource type="Texture2D" uid="uid://c7jd3sdb1ey3f" path="res://Assets/open_scene.png" id="1_64kpt"]
+[ext_resource type="Script" uid="uid://dvydybhlsstyp" path="res://Scripts/opening.gd" id="1_76xge"]
+[ext_resource type="Texture2D" uid="uid://51b80tgd8whc" path="res://Assets/Button_play.png" id="3_oyf75"]
+[ext_resource type="Texture2D" uid="uid://bq4vj75j6fvfa" path="res://Assets/Button_quit.png" id="4_a51mf"]
+[ext_resource type="Texture2D" uid="uid://c8qmqemhcnc3y" path="res://Assets/Button_help.png" id="5_5xwk1"]
+
+[node name="Control" type="Control" unique_id=890563695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76xge")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1537443126]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(1, 1, 1, 0)
+
+[node name="open_scene" type="Sprite2D" parent="." unique_id=739353038]
+position = Vector2(577.00006, 322.99997)
+scale = Vector2(0.9000001, 0.9)
+texture = ExtResource("1_64kpt")
+
+[node name="Button_play" type="Button" parent="." unique_id=1624647569]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 330.0
+offset_right = 256.0
+offset_bottom = 488.0
+action_mode = 0
+icon = ExtResource("3_oyf75")
+flat = true
+expand_icon = true
+
+[node name="Button_quit" type="Button" parent="." unique_id=1475638664]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 330.0
+offset_right = 404.0
+offset_bottom = 481.0
+action_mode = 0
+icon = ExtResource("4_a51mf")
+flat = true
+expand_icon = true
+
+[node name="Button_help" type="Button" parent="." unique_id=75191696]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 459.0
+offset_right = 318.0
+offset_bottom = 624.0
+icon = ExtResource("5_5xwk1")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Button_play" to="." method="_play"]
+[connection signal="pressed" from="Button_quit" to="." method="_quit"]
