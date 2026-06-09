@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0uotew4xi8i0"]
+
+[ext_resource type="Script" uid="uid://cjftja2eh6tad" path="res://Scripts/player_map.gd" id="1_bxef4"]
+[ext_resource type="Texture2D" uid="uid://bjoex6ykxvyl4" path="res://Assets/Pawn_Idle_1.png" id="1_khrac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jped3"]
+size = Vector2(22, 9)
+
+[node name="Player_map" type="CharacterBody2D" unique_id=712387098]
+script = ExtResource("1_bxef4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815610520]
+texture = ExtResource("1_khrac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985412663]
+position = Vector2(4, 23)
+shape = SubResource("RectangleShape2D_jped3")

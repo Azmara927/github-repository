@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://lvj81k511ifo"]
+
+[ext_resource type="Script" uid="uid://cqydj6n4lsl45" path="res://Scripts/player_run.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bjoex6ykxvyl4" path="res://Assets/Pawn_Idle_1.png" id="1_rpqav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 22.022715
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj2gd"]
+radius = 20.0
+
+[node name="Player_run" type="CharacterBody2D" unique_id=1818597459]
+script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181733656]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=487918794]
+texture = ExtResource("1_rpqav")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1076554261]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1899157936]
+position = Vector2(4, 4)
+shape = SubResource("CircleShape2D_kj2gd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

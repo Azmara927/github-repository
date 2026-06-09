@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkqsd3gpgldju"]
+
+[ext_resource type="Texture2D" uid="uid://cxrwp6fu4puwg" path="res://Assets/Enemy_02.png" id="1_d2yo7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5p3rj"]
+radius = 13.4127865
+height = 52.819298
+
+[node name="Area2D" type="Area2D" unique_id=92892777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654456617]
+rotation = 1.0839139
+shape = SubResource("CapsuleShape2D_5p3rj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1840442270]
+texture = ExtResource("1_d2yo7")
