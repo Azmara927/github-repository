@@ -9,7 +9,7 @@ var score: int = 0
 
 @export var label: Label
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
