@@ -1,14 +1,16 @@
 [gd_scene format=4 uid="uid://5wgadbgrmcot"]
 
 [ext_resource type="Texture2D" uid="uid://yf4adhk6aufj" path="res://Assets/death_bg.png" id="1_066rk"]
+[ext_resource type="Script" uid="uid://bwdjiywifs6c8" path="res://Scripts/death.gd" id="1_ra8a5"]
 [ext_resource type="Texture2D" uid="uid://bnro5a71j5ljm" path="res://Assets/Banner.png" id="2_xejl3"]
 [ext_resource type="Texture2D" uid="uid://cngc3uqxs08y1" path="res://Assets/Clouds_01.png" id="3_65qoq"]
 [ext_resource type="Texture2D" uid="uid://comyvfp0r7x1p" path="res://Assets/Clouds_04.png" id="4_tcnkp"]
 [ext_resource type="Texture2D" uid="uid://bi5q5qu8uilt1" path="res://Assets/BigRibbons.png" id="5_rw0p4"]
 [ext_resource type="FontFile" uid="uid://2votglvnpwt1" path="res://Assets/Fonts/Rubik_Iso/RubikIso-Regular.ttf" id="6_ra8a5"]
-[ext_resource type="Texture2D" uid="uid://q3h16yr5t4ed" path="res://Assets/SmallBlueSquareButton_Regular.png" id="7_tcnkp"]
+[ext_resource type="Texture2D" uid="uid://q3h16yr5t4ed" path="res://Assets/Button_blue.png" id="7_tcnkp"]
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="8_rw0p4"]
 [ext_resource type="Texture2D" uid="uid://dom3axnrf30do" path="res://Assets/heart.png" id="9_ra8a5"]
+[ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="11_7y8km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7y8km"]
 texture = ExtResource("2_xejl3")
@@ -1116,6 +1118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ra8a5")
 
 [node name="DeathBg" type="Sprite2D" parent="." unique_id=1285229326]
 position = Vector2(576, 325)
@@ -1193,3 +1196,13 @@ horizontal_alignment = 1
 position = Vector2(435.00003, 396)
 scale = Vector2(2.95, 3.1666667)
 texture = ExtResource("9_ra8a5")
+
+[node name="Button3" type="Button" parent="." unique_id=1801244389]
+layout_mode = 0
+offset_left = 1051.0
+offset_top = 13.0
+offset_right = 1140.0
+offset_bottom = 111.0
+icon = ExtResource("11_7y8km")
+flat = true
+expand_icon = true

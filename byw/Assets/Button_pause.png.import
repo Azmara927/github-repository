@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q3h16yr5t4ed"
-path="res://.godot/imported/SmallBlueSquareButton_Regular.png-eb7cdae537ecf2d7bb397bea487d24d9.ctex"
+uid="uid://bbbu105fagncv"
+path="res://.godot/imported/Button_pause.png-712bcd75f51fb6e1bf6e389728064a2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SmallBlueSquareButton_Regular.png"
-dest_files=["res://.godot/imported/SmallBlueSquareButton_Regular.png-eb7cdae537ecf2d7bb397bea487d24d9.ctex"]
+source_file="res://Assets/Button_pause.png"
+dest_files=["res://.godot/imported/Button_pause.png-712bcd75f51fb6e1bf6e389728064a2f.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var score: int = 0
@@ -20,11 +20,11 @@ func _physics_process(delta) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	#var direction := Input.get_axis("ui_left", "ui_right")
+	#if direction:
+	velocity.x = SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if Input.is_action_pressed("ui_down"):
 		position.y += 1
@@ -38,5 +38,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		score += 1
 		label.text = str(score)
 		area.queue_free()
-#	if area.is_in_group("damager"):
-#		get_tree().call_deferred("reload_death_scene")
+	if area.is_in_group("damager"):
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/death.tscn")
