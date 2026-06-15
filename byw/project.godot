@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="BYW"
+run/main_scene="uid://cs04d1e3c3tpw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://j7nk251vp6od"
 
 [display]
 

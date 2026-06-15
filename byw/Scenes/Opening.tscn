@@ -63,3 +63,4 @@ position = Vector2(571, 323)
 
 [connection signal="pressed" from="Button_play" to="." method="_play"]
 [connection signal="pressed" from="Button_quit" to="." method="_quit"]
+[connection signal="pressed" from="Button_help" to="." method="_help"]

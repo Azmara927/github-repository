@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://dowyl5ln1d6fk"]
 
+[ext_resource type="Script" uid="uid://bwdjiywifs6c8" path="res://Scripts/death.gd" id="1_3fojq"]
 [ext_resource type="Texture2D" uid="uid://yf4adhk6aufj" path="res://Assets/death_bg.png" id="1_l2mpd"]
 [ext_resource type="Texture2D" uid="uid://csxpji0lyqg1c" path="res://Assets/Banner_Slots.png" id="2_5a6ek"]
+[ext_resource type="Texture2D" uid="uid://q3h16yr5t4ed" path="res://Assets/Button_blue.png" id="3_e0jm0"]
+[ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="4_3fojq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nsogc"]
+font = ExtResource("4_3fojq")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_0pswh"]
+font = ExtResource("4_3fojq")
+font_size = 36
 
 [node name="Control" type="Control" unique_id=620929370]
 layout_mode = 3
@@ -10,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3fojq")
 
 [node name="DeathBg" type="Sprite2D" parent="." unique_id=1464414075]
 position = Vector2(580, 325)
@@ -22,5 +34,41 @@ texture = ExtResource("2_5a6ek")
 
 [node name="Button" type="Button" parent="." unique_id=1287762091]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 301.0
+offset_top = 174.0
+offset_right = 602.0
+offset_bottom = 473.0
+icon = ExtResource("3_e0jm0")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button" unique_id=1122500308]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 109.0
+offset_right = 221.0
+offset_bottom = 156.0
+text = "RESUME"
+label_settings = SubResource("LabelSettings_nsogc")
+
+[node name="Button2" type="Button" parent="." unique_id=1712564303]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 168.0
+offset_right = 878.0
+offset_bottom = 477.0
+icon = ExtResource("3_e0jm0")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button2" unique_id=910087698]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 95.0
+offset_right = 226.0
+offset_bottom = 192.0
+text = "RETURN
+TO MAP"
+label_settings = SubResource("LabelSettings_0pswh")
+
+[connection signal="pressed" from="Button2" to="." method="_retun_map"]

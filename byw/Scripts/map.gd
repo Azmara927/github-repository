@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _run() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
 
 
 
@@ -14,3 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _save() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/save.tscn")

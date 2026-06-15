@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://do3elox8qhywb"]
+
+[ext_resource type="Script" uid="uid://caxe5mu6m231o" path="res://Scripts/save.gd" id="1_7pi6b"]
+[ext_resource type="Texture2D" uid="uid://csxpji0lyqg1c" path="res://Assets/Banner_Slots.png" id="1_mqumr"]
+[ext_resource type="Texture2D" uid="uid://dua330573to40" path="res://Assets/Button_brown.png" id="2_42gct"]
+[ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="3_0mspw"]
+[ext_resource type="Texture2D" uid="uid://b6cxsv36osngn" path="res://Assets/Icon_back.png" id="5_jtidj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pi6b"]
+font = ExtResource("3_0mspw")
+font_size = 34
+
+[sub_resource type="LabelSettings" id="LabelSettings_jtidj"]
+font = ExtResource("3_0mspw")
+font_size = 40
+
+[node name="Control" type="Control" unique_id=280311521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7pi6b")
+
+[node name="BannerSlots" type="Sprite2D" parent="." unique_id=2081223132]
+position = Vector2(558.00006, 327.5)
+scale = Vector2(3.4010417, 2.5156252)
+texture = ExtResource("1_mqumr")
+
+[node name="Button" type="Button" parent="." unique_id=1407919268]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 82.0
+offset_right = 722.0
+offset_bottom = 354.0
+icon = ExtResource("2_42gct")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button" unique_id=1197882736]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 97.0
+offset_right = 203.0
+offset_bottom = 229.0
+text = "SAVE
+& QUIT"
+label_settings = SubResource("LabelSettings_7pi6b")
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="." unique_id=804124931]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 270.0
+offset_right = 712.0
+offset_bottom = 595.0
+icon = ExtResource("2_42gct")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button2" unique_id=1206413980]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 146.0
+offset_right = 219.0
+offset_bottom = 240.0
+text = "QUIT"
+label_settings = SubResource("LabelSettings_jtidj")
+
+[node name="Button3" type="Button" parent="." unique_id=564030515]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 98.0
+offset_right = 362.0
+offset_bottom = 190.0
+icon = ExtResource("5_jtidj")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Button3" to="." method="_back"]

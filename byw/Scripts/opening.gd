@@ -7,3 +7,7 @@ func _play() -> void:
 
 func _quit() -> void:
 	get_tree().quit()
+
+
+func _help() -> void:
+	pass # Replace with function body.

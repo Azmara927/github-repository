@@ -12,11 +12,13 @@ func _process(delta):
 	#bg_1.global_position.x -= 50 * delta
 	bg_2.global_position.x -= 80 * delta
 	#bg_3.global_position.x -= 50 * delta
-	player.global_position.x -= 80 * delta
+	player.global_position.x -= 200 * delta
 	#if bg_1.global_position.x <= 0:
 		#bg_1.global_position.x = 1000
-	if bg_2.global_position.x <= 0:
-		bg_2.global_position.x = 620
+	if bg_2.global_position.x <= -1157:
+		bg_2.global_position.x = 660
+		for object in bg_2.get_children():
+			object.show()
 	#if bg_3.global_position.x <= 0:
 		#bg_3.global_position.x <= 620
 

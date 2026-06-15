@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="11_36vcg"]
 [ext_resource type="PackedScene" uid="uid://v3dsdp7se2b1" path="res://Scenes/enemy.tscn" id="12_06is1"]
 [ext_resource type="PackedScene" uid="uid://bkqsd3gpgldju" path="res://Scenes/enemy_02.tscn" id="13_ohu22"]
+[ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_hdewa"]
 [ext_resource type="Texture2D" uid="uid://bbbu105fagncv" path="res://Assets/Button_pause.png" id="14_ohu22"]
+[ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="17_s7583"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ac3f"]
 texture = ExtResource("2_mds7c")
@@ -97,11 +99,23 @@ texture_region_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_f8755")
 
 [sub_resource type="LabelSettings" id="LabelSettings_hk4un"]
+font = ExtResource("14_hdewa")
 font_size = 50
+font_color = Color(0.05490196, 0.078431375, 0.19607843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s7583"]
+font = ExtResource("14_hdewa")
+font_size = 45
+font_color = Color(0.05490196, 0.078431375, 0.19607843, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g6e5s"]
 normal = Vector2(0.99949, -0.03193259)
 distance = -110.77734
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lgt3"]
+font = ExtResource("14_hdewa")
+font_size = 50
+font_color = Color(0.06666667, 0.09019608, 0.21176471, 1)
 
 [node name="Node2D" type="Node2D" unique_id=266378097]
 script = ExtResource("1_v074r")
@@ -122,11 +136,12 @@ offset_bottom = 662.0
 color = Color(0.5568628, 0.7529412, 0.9764706, 1)
 
 [node name="Ground" type="TileMapLayer" parent="Background" unique_id=1922942544]
-tile_map_data = PackedByteArray("AAAkABoAAAAFAAMAAAAkAB4AAAAFAAQAAAAoAB4AAAAGAAQAAAAoABoAAAAGAAMAAAAsAB4AAAAGAAQAAAAsABoAAAAAAAUAAAAsABYAAAAAAAQAAAAwAB4AAAAGAAQAAAA0AB4AAAAGAAQAAAAwABoAAAAGAAQAAAA0ABoAAAAGAAQAAAAwABYAAAAGAAMAAAA0ABYAAAAHAAMAAAA9ABEAAAAIAAMAAAA9ABUAAAAIAAQAAABGABoAAAAFAAMAAABGAB4AAAAFAAQAAAAAABoAAAAGAAMAAAAAAB4AAAAGAAQAAAAEABoAAAAGAAMAAAAEAB4AAAAGAAQAAAAIABoAAAAGAAMAAAAIAB4AAAAGAAQAAAAMABoAAAAHAAMAAAAMAB4AAAAHAAQAAADk/xoAAAAGAAMAAADk/x4AAAAGAAQAAADo/xoAAAADAAQAAADo/x4AAAADAAUAAADr/yIAAAAGAAQAAADs/x4AAAAGAAMAAADv/yIAAAAGAAQAAADw/x4AAAAGAAMAAADz/yIAAAAGAAQAAAD0/x4AAAAGAAMAAAD4/xoAAAAAAAQAAAD4/x4AAAAAAAUAAAD8/xoAAAAGAAMAAAD8/x4AAAAGAAQAAAD3/yIAAAAGAAQAAADg/xoAAAAGAAMAAADc/xoAAAAGAAMAAADg/x4AAAAGAAQAAADc/x4AAAAGAAQAAADY/xoAAAAGAAMAAADY/x4AAAAGAAQAAAAWABsAAAAFAAMAAAAWAB8AAAAFAAQAAAAaABsAAAAHAAMAAAAaAB8AAAAHAAQAAAA=")
+position = Vector2(660, 0)
+tile_map_data = PackedByteArray("AAAkABoAAAAFAAMAAAAkAB4AAAAFAAQAAAAoAB4AAAAGAAQAAAAoABoAAAAGAAMAAAAsAB4AAAAGAAQAAAAsABoAAAAAAAUAAAAsABYAAAAAAAQAAAAwAB4AAAAGAAQAAAAwABoAAAAGAAQAAAAwABYAAAAGAAMAAAA9ABEAAAAIAAMAAAA9ABUAAAAIAAQAAABGABoAAAAFAAMAAABGAB4AAAAFAAQAAAAAABoAAAAGAAMAAAAAAB4AAAAGAAQAAAAEABoAAAAGAAMAAAAEAB4AAAAGAAQAAAAIABoAAAAGAAMAAAAIAB4AAAAGAAQAAAAMABoAAAAHAAMAAAAMAB4AAAAHAAQAAADk/xoAAAAGAAMAAADk/x4AAAAGAAQAAADo/xoAAAADAAQAAADo/x4AAAADAAUAAADr/yIAAAAGAAQAAADs/x4AAAAGAAMAAADv/yIAAAAGAAQAAADw/x4AAAAGAAMAAADz/yIAAAAGAAQAAAD0/x4AAAAGAAMAAAD4/xoAAAAAAAQAAAD4/x4AAAAAAAUAAAD8/xoAAAAGAAMAAAD8/x4AAAAGAAQAAAD3/yIAAAAGAAQAAADg/xoAAAAGAAMAAADc/xoAAAAGAAMAAADg/x4AAAAGAAQAAADc/x4AAAAGAAQAAADY/xoAAAAGAAMAAADY/x4AAAAGAAQAAAAWABsAAAAFAAMAAAAWAB8AAAAFAAQAAAAaABsAAAAHAAMAAAAaAB8AAAAHAAQAAAA4ABYAAAAHAAMAAAA4ABoAAAAGAAQAAAA4AB4AAAAGAAQAAAA0ABYAAAAGAAMAAAA0AB4AAAAGAAQAAAA0ABoAAAAGAAQAAABKABoAAAAGAAMAAABKAB4AAAAGAAQAAABOABoAAAAGAAMAAABOAB4AAAAGAAQAAABSABoAAAAGAAMAAABSAB4AAAAGAAQAAABWABoAAAAGAAMAAABWAB4AAAAGAAQAAABaABoAAAADAAQAAABaAB4AAAADAAUAAABdACIAAAAGAAQAAABeAB4AAAAGAAMAAABhACIAAAAGAAQAAABiAB4AAAAGAAMAAABlACIAAAAGAAQAAABmAB4AAAAGAAMAAABpACIAAAAGAAQAAABqABoAAAAAAAQAAABqAB4AAAAAAAUAAABuABoAAAAGAAMAAABuAB4AAAAGAAQAAAByABoAAAAGAAMAAAByAB4AAAAGAAQAAAB2ABoAAAAGAAMAAAB2AB4AAAAGAAQAAAB6ABoAAAAGAAMAAAB6AB4AAAAGAAQAAAB+ABoAAAAHAAMAAAB+AB4AAAAHAAQAAAA=")
 tile_set = SubResource("TileSet_mdlyc")
 
 [node name="Area2D2" parent="Background/Ground" unique_id=1656266706 instance=ExtResource("12_06is1")]
-position = Vector2(-265, 428)
+position = Vector2(-230, 428)
 
 [node name="Area2D3" parent="Background/Ground" unique_id=92892777 instance=ExtResource("13_ohu22")]
 position = Vector2(677, 412)
@@ -177,10 +192,18 @@ position = Vector2(817, 256)
 [node name="Label" type="Label" parent="." unique_id=1762096136]
 offset_left = 40.0
 offset_top = 23.0
-offset_right = 102.0
+offset_right = 150.0
 offset_bottom = 92.0
 text = "0"
 label_settings = SubResource("LabelSettings_hk4un")
+
+[node name="Label2" type="Label" parent="." unique_id=718947549]
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 54.0
+offset_bottom = 86.0
+text = "$"
+label_settings = SubResource("LabelSettings_s7583")
 
 [node name="Player_run" parent="." unique_id=1818597459 node_paths=PackedStringArray("label") instance=ExtResource("10_cc7yl")]
 position = Vector2(50, 404)
@@ -197,12 +220,29 @@ repeat_size = Vector2(1200, 700)
 repeat_times = 2
 
 [node name="Button" type="Button" parent="." unique_id=564511166]
-offset_left = 1073.0
-offset_top = 11.0
-offset_right = 1142.0
-offset_bottom = 85.0
+offset_left = 974.0
+offset_top = 10.0
+offset_right = 1050.0
+offset_bottom = 93.0
 icon = ExtResource("14_ohu22")
 flat = true
 expand_icon = true
+
+[node name="Button2" type="Button" parent="." unique_id=1221011061]
+offset_left = 1058.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 104.0
+icon = ExtResource("17_s7583")
+flat = true
+expand_icon = true
+
+[node name="XP" type="Label" parent="." unique_id=265636859]
+offset_left = 143.0
+offset_top = 27.0
+offset_right = 318.0
+offset_bottom = 123.0
+text = "XP"
+label_settings = SubResource("LabelSettings_0lgt3")
 
 [connection signal="pressed" from="Button" to="." method="_pause"]
