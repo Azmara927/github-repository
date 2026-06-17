@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://dom3axnrf30do" path="res://Assets/Icon_heart.png" id="12_q4yjo"]
 [ext_resource type="Texture2D" uid="uid://cio10m8b7dag0" path="res://Assets/Icon_coin.png" id="13_jdjsr"]
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_6hulr"]
+[ext_resource type="Texture2D" uid="uid://c0ukrno3ggvyj" path="res://Assets/Buildings/Black_archery.png" id="15_6kno7"]
+[ext_resource type="Texture2D" uid="uid://buil37antrxl1" path="res://Assets/Buildings/Black_barracks.png" id="16_uylqo"]
+[ext_resource type="Texture2D" uid="uid://b3jcpedfyjde8" path="res://Assets/Buildings/Black_castle.png" id="17_nitb1"]
+[ext_resource type="Texture2D" uid="uid://e1mep6dauo13" path="res://Assets/Buildings/Black_tower.png" id="18_dumge"]
+[ext_resource type="Texture2D" uid="uid://cx321j1mq4w3i" path="res://Assets/Buildings/Black_house.png" id="19_pfmft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -293,7 +298,7 @@ flat = true
 expand_icon = true
 
 [node name="Player_map" parent="." unique_id=712387098 instance=ExtResource("10_bjq7f")]
-position = Vector2(585, 262)
+position = Vector2(326, 479)
 
 [node name="ButtonSettings" type="Button" parent="." unique_id=641708906]
 offset_left = 312.0
@@ -346,6 +351,26 @@ texture = ExtResource("12_q4yjo")
 custom_minimum_size = Vector2(60, 54)
 layout_mode = 2
 texture = ExtResource("12_q4yjo")
+
+[node name="BlackArchery" type="Sprite2D" parent="." unique_id=1069802119]
+position = Vector2(188, 97)
+texture = ExtResource("15_6kno7")
+
+[node name="BlackBarracks" type="Sprite2D" parent="." unique_id=1356545040]
+position = Vector2(944, 459)
+texture = ExtResource("16_uylqo")
+
+[node name="BlackCastle" type="Sprite2D" parent="." unique_id=1245226057]
+position = Vector2(634, 248)
+texture = ExtResource("17_nitb1")
+
+[node name="BlackTower" type="Sprite2D" parent="." unique_id=2077395167]
+position = Vector2(119, 466)
+texture = ExtResource("18_dumge")
+
+[node name="BlackHouse" type="Sprite2D" parent="." unique_id=1946692408]
+position = Vector2(582, 487)
+texture = ExtResource("19_pfmft")
 
 [connection signal="pressed" from="ButtonRun" to="." method="_run"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]

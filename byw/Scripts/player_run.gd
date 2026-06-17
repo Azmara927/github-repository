@@ -5,9 +5,10 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var score: int = 0
-
+var lives: int = 0
 
 @export var label: Label
+ 
 
 func _physics_process(delta) -> void:
 	# Add the gravity.
@@ -39,4 +40,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		label.text = str(score)
 		area.hide()
 	if area.is_in_group("damager"):
+		lives -= 1
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/death.tscn")
