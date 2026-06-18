@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 135.0
 const JUMP_VELOCITY = -400.0
 
-var score: int = 0
-var lives: int = 0
+var coins: int = 0
+var lives: int = 5
+
+@onready var XP = $"../../../XP"
+
 
 @export var label: Label
  
@@ -36,9 +39,9 @@ func _physics_process(delta) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("collectible"):
-		score += 1
-		label.text = str(score)
+		coins += 1
+		label.text = str(coins)
 		area.hide()
 	if area.is_in_group("damager"):
-		lives -= 1
+		Global.lives -= 1
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/death.tscn")

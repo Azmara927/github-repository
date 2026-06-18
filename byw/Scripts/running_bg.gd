@@ -6,13 +6,14 @@ var score: int = 0
 @export var bg_2 : Node
 @export var bg_3 : Node
 @export var player : Node
+@export var coins_run :Node
 
 
 func _process(delta):
 	#bg_1.global_position.x -= 50 * delta
-	bg_2.global_position.x -= 80 * delta
+	bg_2.global_position.x -= 90 * delta
 	#bg_3.global_position.x -= 50 * delta
-	player.global_position.x -= 40 * delta
+	player.global_position.x -= 80 * delta
 	#if bg_1.global_position.x <= 0:
 		#bg_1.global_position.x = 1000
 	if bg_2.global_position.x <= -1157:
