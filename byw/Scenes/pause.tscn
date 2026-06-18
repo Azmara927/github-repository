@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dowyl5ln1d6fk"]
 
-[ext_resource type="Script" uid="uid://bwdjiywifs6c8" path="res://Scripts/death.gd" id="1_3fojq"]
+[ext_resource type="Script" uid="uid://bs5elrf7uloi6" path="res://Scripts/pause.gd" id="1_3fojq"]
 [ext_resource type="Texture2D" uid="uid://yf4adhk6aufj" path="res://Assets/death_bg.png" id="1_l2mpd"]
 [ext_resource type="Texture2D" uid="uid://csxpji0lyqg1c" path="res://Assets/Banner_Slots.png" id="2_5a6ek"]
 [ext_resource type="Texture2D" uid="uid://q3h16yr5t4ed" path="res://Assets/Button_blue.png" id="3_e0jm0"]
@@ -15,6 +15,7 @@ font = ExtResource("4_3fojq")
 font_size = 36
 
 [node name="Control" type="Control" unique_id=620929370]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,4 +72,5 @@ text = "RETURN
 TO MAP"
 label_settings = SubResource("LabelSettings_0pswh")
 
-[connection signal="pressed" from="Button2" to="." method="_retun_map"]
+[connection signal="pressed" from="Button" to="." method="_resume"]
+[connection signal="pressed" from="Button2" to="." method="_return_map"]

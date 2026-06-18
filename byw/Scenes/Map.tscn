@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b3jcpedfyjde8" path="res://Assets/Buildings/Black_castle.png" id="17_nitb1"]
 [ext_resource type="Texture2D" uid="uid://e1mep6dauo13" path="res://Assets/Buildings/Black_tower.png" id="18_dumge"]
 [ext_resource type="Texture2D" uid="uid://cx321j1mq4w3i" path="res://Assets/Buildings/Black_house.png" id="19_pfmft"]
+[ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
+[ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -250,7 +252,6 @@ position = Vector2(880, 132)
 texture = ExtResource("3_00287")
 
 [node name="Tree3" type="Sprite2D" parent="." unique_id=5924347]
-z_index = 1
 position = Vector2(1072, 376)
 scale = Vector2(1.1583333, 1.0833334)
 texture = ExtResource("3_00287")
@@ -276,7 +277,7 @@ position = Vector2(424, 252)
 texture = ExtResource("5_ngcqm")
 
 [node name="StumpWhite2" type="Sprite2D" parent="." unique_id=420007406]
-position = Vector2(270, 85)
+position = Vector2(283, 97)
 texture = ExtResource("6_ws1hi")
 
 [node name="ButtonRun" type="Button" parent="." unique_id=939225063]
@@ -353,24 +354,64 @@ layout_mode = 2
 texture = ExtResource("12_q4yjo")
 
 [node name="BlackArchery" type="Sprite2D" parent="." unique_id=1069802119]
-position = Vector2(188, 97)
+position = Vector2(164, 94)
+scale = Vector2(1.1354166, 1.0234375)
 texture = ExtResource("15_6kno7")
 
 [node name="BlackBarracks" type="Sprite2D" parent="." unique_id=1356545040]
-position = Vector2(944, 459)
+position = Vector2(966, 437.75)
+scale = Vector2(1.3229163, 1.1464844)
 texture = ExtResource("16_uylqo")
 
 [node name="BlackCastle" type="Sprite2D" parent="." unique_id=1245226057]
-position = Vector2(634, 248)
+position = Vector2(628.00006, 237)
+scale = Vector2(1.065625, 1.0664063)
 texture = ExtResource("17_nitb1")
 
 [node name="BlackTower" type="Sprite2D" parent="." unique_id=2077395167]
-position = Vector2(119, 466)
+position = Vector2(124, 428)
+scale = Vector2(1.234375, 1.2968748)
 texture = ExtResource("18_dumge")
 
 [node name="BlackHouse" type="Sprite2D" parent="." unique_id=1946692408]
-position = Vector2(582, 487)
+position = Vector2(604, 471)
+scale = Vector2(1.3437499, 1.1666667)
 texture = ExtResource("19_pfmft")
+
+[node name="BlackMonastery" type="Sprite2D" parent="." unique_id=2053013228]
+position = Vector2(1032.5, 112.5)
+scale = Vector2(1.1614584, 1.053125)
+texture = ExtResource("20_cs4iy")
+
+[node name="LockGrey" type="Sprite2D" parent="." unique_id=250655161]
+position = Vector2(636, 273)
+scale = Vector2(0.9398148, 0.89055794)
+texture = ExtResource("21_uylqo")
+
+[node name="LockGrey2" type="Sprite2D" parent="." unique_id=798502134]
+position = Vector2(155, 127)
+scale = Vector2(0.8171295, 0.7542917)
+texture = ExtResource("21_uylqo")
+
+[node name="LockGrey3" type="Sprite2D" parent="." unique_id=111447131]
+position = Vector2(125, 488)
+scale = Vector2(0.6967592, 0.6813304)
+texture = ExtResource("21_uylqo")
+
+[node name="LockGrey4" type="Sprite2D" parent="." unique_id=905348830]
+position = Vector2(961, 501.00003)
+scale = Vector2(0.9398148, 0.89055794)
+texture = ExtResource("21_uylqo")
+
+[node name="LockGrey5" type="Sprite2D" parent="." unique_id=1422721055]
+position = Vector2(612.00006, 511)
+scale = Vector2(0.6874999, 0.60407734)
+texture = ExtResource("21_uylqo")
+
+[node name="LockGrey6" type="Sprite2D" parent="." unique_id=430227613]
+position = Vector2(1031, 200)
+scale = Vector2(0.8217596, 0.7671672)
+texture = ExtResource("21_uylqo")
 
 [connection signal="pressed" from="ButtonRun" to="." method="_run"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]

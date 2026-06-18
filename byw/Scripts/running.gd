@@ -18,11 +18,17 @@ func _process(delta: float) -> void:
 	pass
 
 
-
-func _pause() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/pause.tscn")
+#func _pause() -> void:
+#	get_tree().call_deferred("change_scene_to_file", "res://scenes/pause.tscn")
 
 
 func _XP() -> void:
 	XP += 1 * 17
 	XP_label.text = str(XP)
+
+
+func _pause() -> void:
+	var pause_menu = preload("res://Scenes/pause.tscn").instantiate()
+	add_child(pause_menu)
+	get_tree().paused = true
+	pass # Replace with function body.
