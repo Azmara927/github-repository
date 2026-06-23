@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 func _XP() -> void:
 	XP += 1 * 17
 	XP_label.text = str(XP)
+	Global.XP_this_run = XP
 
 
 func _pause() -> void:

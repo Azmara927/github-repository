@@ -3,13 +3,15 @@ extends Control
 
 @onready var running_script = "res://Scripts/running.gd"
 @onready var coins_collected = $coins_collected
-@onready var XP = $score
+@onready var current_XP = $score
 @onready var highestXP = $high_score
 
 
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-#	coins_collected.text = str(score)
+#Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	coins_collected.text = str(Global.coins_this_run)
+	current_XP.text = str(Global.XP_this_run)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -37,7 +37,7 @@ func _ready() -> void:
 		Heart1.modulate.a = 0.5
 		
 #Coins collected
-	print(Global.coins)
+	#print(Global.coins)
 	
 
 

@@ -1,7 +1,9 @@
 extends Node
 
 var lives: int = 5
-var coins: int = 0
+var coins_this_run: int = 0
+var XP_this_run: int = 0
+var high_score: int = 0
 
 
 @export var coins_run = Label

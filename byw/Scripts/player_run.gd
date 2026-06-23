@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 110.0
+const JUMP_VELOCITY = -550.0
 
 var coins: int = 0
 var lives: int = 5
@@ -40,6 +40,7 @@ func _physics_process(delta) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("collectible"):
 		coins += 1
+		Global.coins_this_run = coins
 		label.text = str(coins)
 		area.hide()
 	if area.is_in_group("damager"):
