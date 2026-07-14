@@ -1,10 +1,15 @@
 extends Control
 
+var hover_cursor = preload ("res://Assets/Cursor_03.png")
+
+
 
 @onready var running_script = "res://Scripts/running.gd"
 @onready var coins_collected = $coins_collected
 @onready var current_XP = $score
 @onready var highestXP = $high_score
+@onready var run_button = $ButtonRun
+@onready var revive_button = $Button
 
 
 #Called when the node enters the scene tree for the first time.
@@ -21,10 +26,22 @@ func _process(delta: float) -> void:
 
 
 func _revive() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
-	#if Global.lives >= 0:
-	#	mouse_default_cursor_shape
+	if Global.lives > 0:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
+	else:
+		revive_button.disabled = true
+#revive disable not working
+#	if Global.lives <= 0:
+#		disabled
 
 
 func _map() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Map.tscn")
+
+#add the mouse hovering part
+#func _mouse_entered() -> void:
+#	if Global.lives <= 0:
+#		Input.set_custom_mouse_cursor(hover_cursor)
+
+#func _mouse_exited() -> void:
+#	Input.set_default_cursor_shape

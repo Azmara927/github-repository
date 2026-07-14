@@ -2,6 +2,7 @@ extends Node
 
 var lives: int = 5
 var coins_this_run: int = 0
+var total_coins_earned: int = 0
 var XP_this_run: int = 0
 var high_score: int = 0
 

@@ -5,6 +5,8 @@ extends Node2D
 @onready var Heart3: TextureRect = $HBoxContainer/TextureRect3
 @onready var Heart2: TextureRect = $HBoxContainer/TextureRect2
 @onready var Heart1: TextureRect = $HBoxContainer/TextureRect
+@onready var total_coins: Label = $Label2
+@onready var run_button: Button = $ButtonRun
 
 
 func _run() -> void:
@@ -35,10 +37,13 @@ func _ready() -> void:
 		Heart3.modulate.a = 0.5
 		Heart2.modulate.a = 0.5
 		Heart1.modulate.a = 0.5
+#total coins eanred not showing in the map
+	total_coins.text = str(Global.coins_this_run)
+
 		
 #Coins collected
-	#print(Global.coins)
-	
+	Global.total_coins_earned += Global.coins_this_run
+	total_coins.text = str(Global.total_coins_earned)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,3 +53,11 @@ func _process(delta: float) -> void:
 
 func _save() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/save.tscn")
+	
+	
+	
+
+#unrevivable button not working
+func _unrevivable() -> void:
+	if Global.lives <= 0:
+		run_button.disabled = true

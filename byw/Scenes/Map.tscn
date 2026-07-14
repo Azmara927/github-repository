@@ -227,6 +227,10 @@ height = 152.0
 font = ExtResource("14_6hulr")
 font_size = 45
 
+[sub_resource type="LabelSettings" id="LabelSettings_uylqo"]
+font = ExtResource("14_6hulr")
+font_size = 45
+
 [node name="Node2D" type="Node2D" unique_id=866389142]
 script = ExtResource("1_5t7yc")
 
@@ -316,10 +320,18 @@ texture = ExtResource("13_jdjsr")
 [node name="Label" type="Label" parent="." unique_id=548621742]
 offset_left = 848.0
 offset_top = 8.0
-offset_right = 974.0
+offset_right = 870.0
 offset_bottom = 67.0
-text = "$$$$"
+text = "$"
 label_settings = SubResource("LabelSettings_ejakq")
+
+[node name="Label2" type="Label" parent="." unique_id=344422648]
+offset_left = 872.0
+offset_top = 9.0
+offset_right = 990.0
+offset_bottom = 68.0
+text = "0"
+label_settings = SubResource("LabelSettings_uylqo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1577280153]
 offset_left = 413.0
@@ -413,5 +425,6 @@ position = Vector2(1031, 200)
 scale = Vector2(0.8217596, 0.7671672)
 texture = ExtResource("21_uylqo")
 
+[connection signal="pressed" from="ButtonRun" to="." method="_unrevivable"]
 [connection signal="pressed" from="ButtonRun" to="." method="_run"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
