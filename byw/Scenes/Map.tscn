@@ -15,12 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://cio10m8b7dag0" path="res://Assets/Icon_coin.png" id="13_jdjsr"]
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_6hulr"]
 [ext_resource type="Texture2D" uid="uid://c0ukrno3ggvyj" path="res://Assets/Buildings/Black_archery.png" id="15_6kno7"]
+[ext_resource type="Script" uid="uid://d2qe8s4yjldqa" path="res://Scripts/buildings.gd" id="16_nitb1"]
 [ext_resource type="Texture2D" uid="uid://buil37antrxl1" path="res://Assets/Buildings/Black_barracks.png" id="16_uylqo"]
 [ext_resource type="Texture2D" uid="uid://b3jcpedfyjde8" path="res://Assets/Buildings/Black_castle.png" id="17_nitb1"]
 [ext_resource type="Texture2D" uid="uid://e1mep6dauo13" path="res://Assets/Buildings/Black_tower.png" id="18_dumge"]
 [ext_resource type="Texture2D" uid="uid://cx321j1mq4w3i" path="res://Assets/Buildings/Black_house.png" id="19_pfmft"]
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
+[ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings_2.tscn" id="23_dumge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -369,62 +371,102 @@ texture = ExtResource("12_q4yjo")
 position = Vector2(164, 94)
 scale = Vector2(1.1354166, 1.0234375)
 texture = ExtResource("15_6kno7")
+script = ExtResource("16_nitb1")
+
+[node name="TextureButton" type="TextureButton" parent="BlackArchery" unique_id=24052836]
+offset_left = -83.66973
+offset_top = -49.832058
+offset_right = 62.01835
+offset_bottom = 111.38931
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="BlackBarracks" type="Sprite2D" parent="." unique_id=1356545040]
 position = Vector2(966, 437.75)
 scale = Vector2(1.3229163, 1.1464844)
 texture = ExtResource("16_uylqo")
 
+[node name="TextureButton" type="TextureButton" parent="BlackBarracks" unique_id=2131821302]
+offset_left = -65.00789
+offset_top = -39.904594
+offset_right = 85.41734
+offset_bottom = 124.94715
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="BlackCastle" type="Sprite2D" parent="." unique_id=1245226057]
 position = Vector2(628.00006, 237)
 scale = Vector2(1.065625, 1.0664063)
 texture = ExtResource("17_nitb1")
+
+[node name="TextureButton" type="TextureButton" parent="BlackCastle" unique_id=672104868]
+offset_left = -102.28746
+offset_top = -96.58609
+offset_right = 113.71254
+offset_bottom = 136.41391
+texture_normal = ExtResource("21_uylqo")
 
 [node name="BlackTower" type="Sprite2D" parent="." unique_id=2077395167]
 position = Vector2(124, 428)
 scale = Vector2(1.234375, 1.2968748)
 texture = ExtResource("18_dumge")
 
+[node name="TextureButton" type="TextureButton" parent="BlackTower" unique_id=1940286892]
+offset_left = -59.13924
+offset_top = -10.024097
+offset_right = 62.683537
+offset_bottom = 97.92772
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="BlackHouse" type="Sprite2D" parent="." unique_id=1946692408]
 position = Vector2(604, 471)
 scale = Vector2(1.3437499, 1.1666667)
 texture = ExtResource("19_pfmft")
+
+[node name="TextureButton" type="TextureButton" parent="BlackHouse" unique_id=1291119467]
+offset_left = -52.093033
+offset_top = -45.42859
+offset_right = 50.60463
+offset_bottom = 88.285675
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="BlackMonastery" type="Sprite2D" parent="." unique_id=2053013228]
 position = Vector2(1032.5, 112.5)
 scale = Vector2(1.1614584, 1.053125)
 texture = ExtResource("20_cs4iy")
 
-[node name="LockGrey" type="Sprite2D" parent="." unique_id=250655161]
-position = Vector2(636, 273)
-scale = Vector2(0.9398148, 0.89055794)
-texture = ExtResource("21_uylqo")
+[node name="TextureButton" type="TextureButton" parent="BlackMonastery" unique_id=1302927726]
+offset_left = -80.50224
+offset_top = -14.7181
+offset_right = 76.19734
+offset_bottom = 163.68251
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="LockGrey2" type="Sprite2D" parent="." unique_id=798502134]
-position = Vector2(155, 127)
-scale = Vector2(0.8171295, 0.7542917)
-texture = ExtResource("21_uylqo")
+[node name="Control" parent="." unique_id=1366339947 instance=ExtResource("23_dumge")]
+visible = false
+offset_left = -28.0
+offset_top = 7.0
+offset_right = -28.0
+offset_bottom = 7.0
 
-[node name="LockGrey3" type="Sprite2D" parent="." unique_id=111447131]
-position = Vector2(125, 488)
-scale = Vector2(0.6967592, 0.6813304)
-texture = ExtResource("21_uylqo")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1330049335]
+visible = false
 
-[node name="LockGrey4" type="Sprite2D" parent="." unique_id=905348830]
-position = Vector2(961, 501.00003)
-scale = Vector2(0.9398148, 0.89055794)
-texture = ExtResource("21_uylqo")
-
-[node name="LockGrey5" type="Sprite2D" parent="." unique_id=1422721055]
-position = Vector2(612.00006, 511)
-scale = Vector2(0.6874999, 0.60407734)
-texture = ExtResource("21_uylqo")
-
-[node name="LockGrey6" type="Sprite2D" parent="." unique_id=430227613]
-position = Vector2(1031, 200)
-scale = Vector2(0.8217596, 0.7671672)
-texture = ExtResource("21_uylqo")
-
-[connection signal="pressed" from="ButtonRun" to="." method="_unrevivable"]
 [connection signal="pressed" from="ButtonRun" to="." method="_run"]
+[connection signal="pressed" from="ButtonRun" to="." method="_unrevivable"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
+[connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
+[connection signal="pressed" from="BlackArchery/TextureButton" to="BlackArchery" method="_button_archery"]
+[connection signal="pressed" from="BlackBarracks/TextureButton" to="BlackArchery" method="black_barracks"]
+[connection signal="pressed" from="BlackCastle/TextureButton" to="BlackArchery" method="black_castle"]
+[connection signal="pressed" from="BlackTower/TextureButton" to="BlackArchery" method="black_tower"]
+[connection signal="pressed" from="BlackHouse/TextureButton" to="BlackArchery" method="black_house"]
+[connection signal="pressed" from="BlackMonastery/TextureButton" to="BlackArchery" method="black_monastery"]

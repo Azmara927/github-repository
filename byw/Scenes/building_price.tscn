@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bq4dqhw0k2ow7"]
+
+[ext_resource type="Texture2D" uid="uid://cv7i43fa51pss" path="res://Assets/Final_final.png" id="1_xgrki"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=162148017]
+offset_right = 517.0
+offset_bottom = 536.0
+texture = ExtResource("1_xgrki")
+region_rect = Rect2(26, 61, 254, 240)
+patch_margin_left = 88
+patch_margin_top = 72
+patch_margin_right = 70
+patch_margin_bottom = 96

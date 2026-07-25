@@ -7,6 +7,7 @@ extends Node2D
 @onready var Heart1: TextureRect = $HBoxContainer/TextureRect
 @onready var total_coins: Label = $Label2
 @onready var run_button: Button = $ButtonRun
+@onready var help: Control = $Control
 
 
 func _run() -> void:
@@ -56,8 +57,13 @@ func _save() -> void:
 	
 	
 	
-
 #unrevivable button not working
 func _unrevivable() -> void:
 	if Global.lives <= 0:
 		run_button.disabled = true
+		
+
+
+
+func _settings_pressed() -> void:
+	help.show()
