@@ -1,5 +1,7 @@
 extends Control
 
+@onready var save: Control = $"."
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +14,4 @@ func _process(delta: float) -> void:
 
 
 func _back() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/Map.tscn")
+	save.hide()

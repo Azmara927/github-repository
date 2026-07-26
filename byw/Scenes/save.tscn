@@ -24,8 +24,8 @@ grow_vertical = 2
 script = ExtResource("1_7pi6b")
 
 [node name="BannerSlots" type="Sprite2D" parent="." unique_id=2081223132]
-position = Vector2(558.00006, 327.5)
-scale = Vector2(3.4010417, 2.5156252)
+position = Vector2(550.00006, 327.5)
+scale = Vector2(2.385417, 2.5156252)
 texture = ExtResource("1_mqumr")
 
 [node name="Button" type="Button" parent="." unique_id=1407919268]
@@ -70,9 +70,9 @@ label_settings = SubResource("LabelSettings_jtidj")
 
 [node name="Button3" type="Button" parent="." unique_id=564030515]
 layout_mode = 0
-offset_left = 252.0
+offset_left = 341.0
 offset_top = 98.0
-offset_right = 362.0
+offset_right = 451.0
 offset_bottom = 190.0
 icon = ExtResource("5_jtidj")
 flat = true

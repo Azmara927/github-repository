@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="8_rw0p4"]
 [ext_resource type="Texture2D" uid="uid://dom3axnrf30do" path="res://Assets/Icon_heart.png" id="9_ra8a5"]
 [ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="11_7y8km"]
+[ext_resource type="AudioStream" uid="uid://dju4jyp8mubol" path="res://Assets/Sounds/game_over.mp3" id="12_7y8km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7y8km"]
 texture = ExtResource("2_xejl3")
@@ -1367,6 +1368,10 @@ offset_right = 657.0
 offset_bottom = 345.0
 text = "2345"
 label_settings = SubResource("LabelSettings_pabk0")
+
+[node name="LevelDeath" type="AudioStreamPlayer2D" parent="." unique_id=284923298]
+stream = ExtResource("12_7y8km")
+autoplay = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_mouse_exited"]

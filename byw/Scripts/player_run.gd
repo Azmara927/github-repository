@@ -8,6 +8,8 @@ var coins: int = 0
 var lives: int = 5
 
 @onready var XP = $"../../../XP"
+@onready var PickUpSound: AudioStreamPlayer2D = $PickUpSound
+@onready var EnemySound: AudioStreamPlayer2D = $EnemyDeath
 
 
 @export var label: Label
@@ -42,6 +44,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		coins += 1
 		Global.coins_this_run = coins
 		label.text = str(coins)
+		PickUpSound.play()
 		area.hide()
 	if area.is_in_group("damager"):
 		Global.lives -= 1

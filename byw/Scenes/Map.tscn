@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
 [ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings_2.tscn" id="23_dumge"]
+[ext_resource type="PackedScene" uid="uid://do3elox8qhywb" path="res://Scenes/save.tscn" id="24_pfmft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -253,7 +254,6 @@ tile_map_data = PackedByteArray("AAAEACQAAAAAAAIAAAAIACQAAAABAAIAAAAMACQAAAABAAI
 tile_set = SubResource("TileSet_5t7yc")
 
 [node name="Tree2" type="Sprite2D" parent="." unique_id=371744854]
-z_index = 1
 position = Vector2(880, 132)
 texture = ExtResource("3_00287")
 
@@ -460,8 +460,12 @@ offset_bottom = 7.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1330049335]
 visible = false
 
-[connection signal="pressed" from="ButtonRun" to="." method="_run"]
-[connection signal="pressed" from="ButtonRun" to="." method="_unrevivable"]
+[node name="Save_option" parent="." unique_id=280311521 instance=ExtResource("24_pfmft")]
+visible = false
+offset_left = 34.0
+offset_right = 34.0
+
+[connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
 [connection signal="pressed" from="BlackArchery/TextureButton" to="BlackArchery" method="_button_archery"]

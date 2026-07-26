@@ -8,11 +8,7 @@ extends Node2D
 @onready var total_coins: Label = $Label2
 @onready var run_button: Button = $ButtonRun
 @onready var help: Control = $Control
-
-
-func _run() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
-
+@onready var save: Control = $Save_option
 
 
 # Called when the node enters the scene tree for the first time. (HEARTS)
@@ -53,17 +49,13 @@ func _process(delta: float) -> void:
 
 
 func _save() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/save.tscn")
+	save.show()
 	
 	
-	
-#unrevivable button not working
-func _unrevivable() -> void:
-	if Global.lives <= 0:
-		run_button.disabled = true
-		
-
-
-
 func _settings_pressed() -> void:
 	help.show()
+
+
+
+func _run_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")

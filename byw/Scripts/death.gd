@@ -10,6 +10,7 @@ var hover_cursor = preload ("res://Assets/Cursor_03.png")
 @onready var highestXP = $high_score
 @onready var run_button = $ButtonRun
 @onready var revive_button = $Button
+@onready var Death: AudioStreamPlayer2D = $LevelDeath
 
 
 #Called when the node enters the scene tree for the first time.
@@ -37,6 +38,9 @@ func _revive() -> void:
 
 func _map() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Map.tscn")
+	
+	
+
 
 #add the mouse hovering part
 #func _mouse_entered() -> void:

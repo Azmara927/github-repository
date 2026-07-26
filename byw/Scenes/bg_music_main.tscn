@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://go6gj7dxwl5q"]
+
+[ext_resource type="AudioStream" uid="uid://c2ddk54aovaqh" path="res://Assets/Sounds/bg_music.mp3" id="1_2xkeb"]
+
+[node name="Node" type="Node" unique_id=1115603472]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1470833484]
+stream = ExtResource("1_2xkeb")

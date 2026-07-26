@@ -13,5 +13,3 @@ shape = SubResource("CircleShape2D_jgi06")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=133438956]
 texture = ExtResource("1_2qo34")
-
-[node name="PickUpSound" type="AudioStreamPlayer2D" parent="." unique_id=1342230847]

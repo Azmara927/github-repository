@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqydj6n4lsl45" path="res://Scripts/player_run.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bjoex6ykxvyl4" path="res://Assets/Pawn_Idle_1.png" id="1_rpqav"]
+[ext_resource type="AudioStream" uid="uid://bsk6uyvdqe16b" path="res://Assets/Sounds/retro_coin.mp3" id="3_rwuwg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
 radius = 22.022715
@@ -24,5 +25,8 @@ texture = ExtResource("1_rpqav")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1899157936]
 position = Vector2(4, 4)
 shape = SubResource("CircleShape2D_kj2gd")
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="." unique_id=470724411]
+stream = ExtResource("3_rwuwg")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
