@@ -9,6 +9,7 @@ extends Node2D
 @onready var run_button: Button = $ButtonRun
 @onready var help: Control = $Control
 @onready var save: Control = $Save_option
+@onready var price: NinePatchRect = $BlackArchery/NinePatchRect
 
 
 # Called when the node enters the scene tree for the first time. (HEARTS)

@@ -18,11 +18,14 @@
 [ext_resource type="Script" uid="uid://d2qe8s4yjldqa" path="res://Scripts/buildings.gd" id="16_nitb1"]
 [ext_resource type="Texture2D" uid="uid://buil37antrxl1" path="res://Assets/Buildings/Black_barracks.png" id="16_uylqo"]
 [ext_resource type="Texture2D" uid="uid://b3jcpedfyjde8" path="res://Assets/Buildings/Black_castle.png" id="17_nitb1"]
+[ext_resource type="PackedScene" uid="uid://bq4dqhw0k2ow7" path="res://Scenes/building_price.tscn" id="18_cs4iy"]
 [ext_resource type="Texture2D" uid="uid://e1mep6dauo13" path="res://Assets/Buildings/Black_tower.png" id="18_dumge"]
+[ext_resource type="FontFile" uid="uid://2votglvnpwt1" path="res://Assets/Fonts/Rubik_Iso/RubikIso-Regular.ttf" id="19_8cvfu"]
 [ext_resource type="Texture2D" uid="uid://cx321j1mq4w3i" path="res://Assets/Buildings/Black_house.png" id="19_pfmft"]
+[ext_resource type="Texture2D" uid="uid://dua330573to40" path="res://Assets/Button_brown.png" id="20_5aq6m"]
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
-[ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings_2.tscn" id="23_dumge"]
+[ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings.tscn" id="23_dumge"]
 [ext_resource type="PackedScene" uid="uid://do3elox8qhywb" path="res://Scenes/save.tscn" id="24_pfmft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
@@ -234,6 +237,25 @@ font_size = 45
 font = ExtResource("14_6hulr")
 font_size = 45
 
+[sub_resource type="LabelSettings" id="LabelSettings_4a88i"]
+font = ExtResource("19_8cvfu")
+font_size = 24
+font_color = Color(0.29411766, 0.34901962, 0.3529412, 1)
+outline_size = 2
+outline_color = Color(0.13333334, 0.11764706, 0.12156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dctp6"]
+font = ExtResource("14_6hulr")
+font_size = 18
+font_color = Color(0.13333334, 0.11764706, 0.12156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqqo1"]
+font = ExtResource("14_6hulr")
+font_size = 20
+font_color = Color(0.2681446, 0.19683188, 0.122279085, 1)
+outline_size = 2
+outline_color = Color(0.27012202, 0.19435984, 0.137108, 1)
+
 [node name="Node2D" type="Node2D" unique_id=866389142]
 script = ExtResource("1_5t7yc")
 
@@ -382,16 +404,63 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="NinePatchRect" parent="BlackArchery" unique_id=162148017 instance=ExtResource("18_cs4iy")]
+visible = false
+z_index = 1
+offset_left = 66.93579
+offset_top = -17.587788
+offset_right = 269.5046
+offset_bottom = 191.51144
+
+[node name="Label" type="Label" parent="BlackArchery/NinePatchRect" unique_id=1629747897]
+layout_mode = 0
+offset_left = 22.899097
+offset_top = 24.427479
+offset_right = 194.64223
+offset_bottom = 53.42748
+text = "ARCHERY"
+label_settings = SubResource("LabelSettings_4a88i")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="BlackArchery/NinePatchRect" unique_id=1261766842]
+layout_mode = 0
+offset_left = 65.17432
+offset_top = 29.312979
+offset_right = 163.81653
+offset_bottom = 142.65648
+icon = ExtResource("20_5aq6m")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="BlackArchery/NinePatchRect/Button" unique_id=1295276240]
+layout_mode = 0
+offset_left = 32.58716
+offset_top = 48.854958
+offset_right = 74.58716
+offset_bottom = 80.85496
+text = "BUY"
+label_settings = SubResource("LabelSettings_dctp6")
+
+[node name="Label2" type="Label" parent="BlackArchery/NinePatchRect" unique_id=1320922436]
+layout_mode = 0
+offset_left = 36.99083
+offset_top = 127.99999
+offset_right = 178.78902
+offset_bottom = 155.0
+text = " x $100"
+label_settings = SubResource("LabelSettings_kqqo1")
+horizontal_alignment = 1
+
 [node name="BlackBarracks" type="Sprite2D" parent="." unique_id=1356545040]
 position = Vector2(966, 437.75)
 scale = Vector2(1.3229163, 1.1464844)
 texture = ExtResource("16_uylqo")
 
 [node name="TextureButton" type="TextureButton" parent="BlackBarracks" unique_id=2131821302]
-offset_left = -65.00789
-offset_top = -39.904594
-offset_right = 85.41734
-offset_bottom = 124.94715
+offset_left = -74.07876
+offset_top = -58.22146
+offset_right = 61.22831
+offset_bottom = 97.908
 texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
@@ -469,6 +538,7 @@ offset_right = 34.0
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
 [connection signal="pressed" from="BlackArchery/TextureButton" to="BlackArchery" method="_button_archery"]
+[connection signal="pressed" from="BlackArchery/NinePatchRect/Button" to="BlackArchery" method="_buy_archery"]
 [connection signal="pressed" from="BlackBarracks/TextureButton" to="BlackArchery" method="black_barracks"]
 [connection signal="pressed" from="BlackCastle/TextureButton" to="BlackArchery" method="black_castle"]
 [connection signal="pressed" from="BlackTower/TextureButton" to="BlackArchery" method="black_tower"]

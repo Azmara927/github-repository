@@ -17,7 +17,6 @@ var hover_cursor = preload ("res://Assets/Cursor_03.png")
 func _ready() -> void:
 	coins_collected.text = str(Global.coins_this_run)
 	current_XP.text = str(Global.XP_this_run)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
