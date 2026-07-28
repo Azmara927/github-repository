@@ -1372,6 +1372,7 @@ label_settings = SubResource("LabelSettings_pabk0")
 [node name="LevelDeath" type="AudioStreamPlayer2D" parent="." unique_id=284923298]
 stream = ExtResource("12_7y8km")
 autoplay = true
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="Button" to="." method="_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_mouse_exited"]

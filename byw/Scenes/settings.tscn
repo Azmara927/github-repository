@@ -17,7 +17,7 @@ outline_color = Color(0.13224411, 0.11830763, 0.121096574, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_u1ngn"]
 font = ExtResource("5_svg4q")
-font_size = 20
+font_size = 17
 font_color = Color(0.29848662, 0.22066599, 0.1393404, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ydjp5"]
@@ -44,6 +44,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 4.0
+offset_right = 19.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_svg4q")
@@ -77,20 +81,35 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1824528529]
 layout_mode = 0
-offset_left = 382.0
+offset_left = 370.0
 offset_top = 221.0
-offset_right = 568.0
-offset_bottom = 282.0
-text = "Instructions 
-on how to play..."
+offset_right = 605.0
+offset_bottom = 368.0
+text = "In order to win the game,
+you need to purchase
+and own all six buildings. 
+To purchase the buildings
+you need to earn coins
+first. For which you have
+to run and avoid
+crashing into obstacles.
+You have five lives and 
+each takes one hour to
+revive.
+Hope you have fun 
+playing this game :)"
 label_settings = SubResource("LabelSettings_u1ngn")
+horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="." unique_id=1641717675]
+[node name="Master" type="HSlider" parent="." unique_id=1641717675]
 layout_mode = 0
 offset_left = 634.0
 offset_top = 144.0
 offset_right = 825.0
 offset_bottom = 236.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="Label3" type="Label" parent="." unique_id=1646262873]
 layout_mode = 0
@@ -101,12 +120,15 @@ offset_bottom = 225.0
 text = "Music"
 label_settings = SubResource("LabelSettings_ydjp5")
 
-[node name="HSlider2" type="HSlider" parent="." unique_id=1606253437]
+[node name="SFX" type="HSlider" parent="." unique_id=1606253437]
 layout_mode = 0
 offset_left = 633.0
 offset_top = 243.0
 offset_right = 824.0
 offset_bottom = 282.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="Label4" type="Label" parent="." unique_id=1292533233]
 layout_mode = 0
@@ -130,10 +152,10 @@ horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="." unique_id=1589026793]
 layout_mode = 0
-offset_left = 622.0
-offset_top = 441.0
-offset_right = 836.0
-offset_bottom = 513.0
+offset_left = 623.0
+offset_top = 452.0
+offset_right = 837.0
+offset_bottom = 524.0
 text = "Jump: spacebar
 Walk: arrow keys or WASD
 Interact: left click"
@@ -149,4 +171,6 @@ icon = ExtResource("6_cwkl3")
 flat = true
 expand_icon = true
 
+[connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
