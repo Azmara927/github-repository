@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d2gi3hpylglkg" path="res://Assets/Clouds_05.png" id="5_66i40"]
 [ext_resource type="Texture2D" uid="uid://dxutuoptld1uf" path="res://Assets/Clouds_06.png" id="6_hdewa"]
 [ext_resource type="Texture2D" uid="uid://dses4gc3im6wx" path="res://Assets/Clouds_07.png" id="7_s7583"]
-[ext_resource type="Texture2D" uid="uid://bvk4qgy6331pg" path="res://Assets/Clouds_08.png" id="8_0lgt3"]
 [ext_resource type="Texture2D" uid="uid://cwimi874ivym6" path="res://Assets/Clouds_03.png" id="9_xnsyr"]
 [ext_resource type="PackedScene" uid="uid://lvj81k511ifo" path="res://Scenes/Player_run.tscn" id="10_cc7yl"]
 [ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="11_36vcg"]
@@ -175,7 +174,8 @@ tile_set = SubResource("TileSet_6ac3f")
 shape = SubResource("WorldBoundaryShape2D_0lgt3")
 
 [node name="Player_run" parent="Background" unique_id=1818597459 node_paths=PackedStringArray("label") instance=ExtResource("10_cc7yl")]
-position = Vector2(50, 404)
+z_index = 1
+position = Vector2(129, 399)
 label = NodePath("../../Label")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=79057944]
@@ -192,7 +192,7 @@ scale = Vector2(0.6128472, 0.44140625)
 texture = ExtResource("5_66i40")
 
 [node name="Clouds06" type="Sprite2D" parent="." unique_id=1869746693]
-position = Vector2(476, 201)
+position = Vector2(424, 72)
 scale = Vector2(0.5486111, 0.53125)
 texture = ExtResource("6_hdewa")
 
@@ -201,12 +201,8 @@ position = Vector2(701, 93.00003)
 scale = Vector2(0.5243056, 0.64453125)
 texture = ExtResource("7_s7583")
 
-[node name="Clouds08" type="Sprite2D" parent="." unique_id=1718105349]
-position = Vector2(161, 335)
-texture = ExtResource("8_0lgt3")
-
 [node name="Clouds03" type="Sprite2D" parent="." unique_id=1632706420]
-position = Vector2(889, 304)
+position = Vector2(557, 190)
 texture = ExtResource("9_xnsyr")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1293797378 groups=["enemy_spawners"]]

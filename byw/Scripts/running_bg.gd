@@ -11,9 +11,9 @@ var score: int = 0
 
 func _process(delta):
 	#bg_1.global_position.x -= 50 * delta
-	bg_2.global_position.x -= 90 * delta
+	bg_2.global_position.x -= 150 * delta
 	#bg_3.global_position.x -= 50 * delta
-	player.global_position.x -= 80 * delta
+	#player.global_position.x -= 80 * delta
 	#if bg_1.global_position.x <= 0:
 		#bg_1.global_position.x = 1000
 	if bg_2.global_position.x <= -1157:
