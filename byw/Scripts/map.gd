@@ -10,9 +10,11 @@ extends Node2D
 @onready var help: Control = $Control
 @onready var save: Control = $Save_option
 @onready var price: NinePatchRect = $BlackArchery/NinePatchRect
+@onready var mouse_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Called when the node enters the scene tree for the first time. (HEARTS)
+#Display of the hearts or lives the player has
 func _ready() -> void:
 	print(Global.lives)
 	if Global.lives == 4:
@@ -49,14 +51,19 @@ func _process(delta: float) -> void:
 	pass
 
 
+#Save button
 func _save() -> void:
+	mouse_click.play()
 	save.show()
-	
-	
+
+
+#Settings button: contains instructions, music/sound adjustment and gameplay instructions
 func _settings_pressed() -> void:
+	mouse_click.play()
 	help.show()
 
 
-
+#Run button: changes to running scene when clicked
 func _run_pressed() -> void:
+	mouse_click.play()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")

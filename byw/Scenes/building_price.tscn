@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq4dqhw0k2ow7"]
 
-[ext_resource type="Texture2D" uid="uid://cv7i43fa51pss" path="res://Assets/Final_final.png" id="1_xgrki"]
+[ext_resource type="Texture2D" uid="uid://cv7i43fa51pss" path="res://Assets/Banner_final.png" id="1_xgrki"]
 
 [node name="NinePatchRect" type="NinePatchRect" unique_id=162148017]
 offset_right = 517.0

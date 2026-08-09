@@ -4,15 +4,18 @@
 [ext_resource type="Script" uid="uid://jg5cdp0n3qt7" path="res://Scripts/running_bg.gd" id="2_66i40"]
 [ext_resource type="Texture2D" uid="uid://c2rwelw6j26os" path="res://Assets/Tilemap_grass.png" id="2_mds7c"]
 [ext_resource type="Texture2D" uid="uid://dqmh5dgtj4drx" path="res://Assets/Water.png" id="3_06is1"]
+[ext_resource type="PackedScene" uid="uid://cihhrr0xnuicd" path="res://Scenes/land_dip.tscn" id="3_cc7yl"]
+[ext_resource type="PackedScene" uid="uid://doh7amss5gkye" path="res://Scenes/land_float.tscn" id="4_36vcg"]
 [ext_resource type="Texture2D" uid="uid://cngc3uqxs08y1" path="res://Assets/Clouds_01.png" id="4_ohu22"]
 [ext_resource type="Texture2D" uid="uid://d2gi3hpylglkg" path="res://Assets/Clouds_05.png" id="5_66i40"]
+[ext_resource type="PackedScene" uid="uid://3mrif6ojuus8" path="res://Scenes/land_jump.tscn" id="5_mnh74"]
 [ext_resource type="Texture2D" uid="uid://dxutuoptld1uf" path="res://Assets/Clouds_06.png" id="6_hdewa"]
+[ext_resource type="PackedScene" uid="uid://bieda4ooyxfn5" path="res://Scenes/land_rise.tscn" id="6_nwd3d"]
 [ext_resource type="Texture2D" uid="uid://dses4gc3im6wx" path="res://Assets/Clouds_07.png" id="7_s7583"]
 [ext_resource type="Texture2D" uid="uid://cwimi874ivym6" path="res://Assets/Clouds_03.png" id="9_xnsyr"]
 [ext_resource type="PackedScene" uid="uid://lvj81k511ifo" path="res://Scenes/Player_run.tscn" id="10_cc7yl"]
 [ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="11_36vcg"]
 [ext_resource type="PackedScene" uid="uid://v3dsdp7se2b1" path="res://Scenes/enemy.tscn" id="12_06is1"]
-[ext_resource type="PackedScene" uid="uid://bkqsd3gpgldju" path="res://Scenes/enemy_02.tscn" id="13_ohu22"]
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_hdewa"]
 [ext_resource type="Texture2D" uid="uid://bbbu105fagncv" path="res://Assets/Button_pause.png" id="14_ohu22"]
 [ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="17_s7583"]
@@ -118,17 +121,22 @@ font = ExtResource("14_hdewa")
 font_size = 50
 font_color = Color(0.06666667, 0.09019608, 0.21176471, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdewa"]
+size = Vector2(26, 770)
+
 [node name="Node2D" type="Node2D" unique_id=266378097 node_paths=PackedStringArray("timer")]
 script = ExtResource("1_v074r")
 timer = NodePath("Timer")
 
-[node name="Background" type="Node2D" parent="." unique_id=215616038 node_paths=PackedStringArray("bg_1", "bg_2", "bg_3", "player", "coins_run")]
+[node name="Background" type="Node2D" parent="." unique_id=215616038 node_paths=PackedStringArray("bg_1", "bg_2", "bg_3", "player", "coins_run", "land_spawn")]
 script = ExtResource("2_66i40")
 bg_1 = NodePath("Sky")
 bg_2 = NodePath("Ground")
 bg_3 = NodePath("Water")
 player = NodePath("Player_run")
 coins_run = NodePath("../Label")
+land_spawn = NodePath("../Marker2D")
+land_scenes = Array[PackedScene]([ExtResource("3_cc7yl"), ExtResource("4_36vcg"), ExtResource("5_mnh74"), ExtResource("6_nwd3d")])
 
 [node name="Sky" type="ColorRect" parent="Background" unique_id=843512755]
 z_index = -2
@@ -140,27 +148,15 @@ color = Color(0.5568628, 0.7529412, 0.9764706, 1)
 
 [node name="Ground" type="TileMapLayer" parent="Background" unique_id=1922942544]
 position = Vector2(660, 0)
-tile_map_data = PackedByteArray("AAAoAB4AAAAGAAQAAAAoABoAAAAGAAMAAAAsAB4AAAAGAAQAAAAsABoAAAAAAAUAAAAsABYAAAAAAAQAAAAwAB4AAAAGAAQAAAAwABoAAAAGAAQAAAAwABYAAAAGAAMAAAA9ABEAAAAIAAMAAAA9ABUAAAAIAAQAAABGABoAAAAFAAMAAABGAB4AAAAFAAQAAAAAABoAAAAGAAMAAAAAAB4AAAAGAAQAAAAEABoAAAAGAAMAAAAEAB4AAAAGAAQAAAAIABoAAAAGAAMAAAAIAB4AAAAGAAQAAAAMABoAAAAHAAMAAAAMAB4AAAAHAAQAAADk/xoAAAAGAAMAAADk/x4AAAAGAAQAAADo/xoAAAADAAQAAADo/x4AAAADAAUAAADr/yIAAAAGAAQAAADs/x4AAAAGAAMAAADv/yIAAAAGAAQAAADw/x4AAAAGAAMAAADz/yIAAAAGAAQAAAD0/x4AAAAGAAMAAAD4/xoAAAAAAAQAAAD4/x4AAAAAAAUAAAD8/xoAAAAGAAMAAAD8/x4AAAAGAAQAAAD3/yIAAAAGAAQAAADg/xoAAAAGAAMAAADc/xoAAAAGAAMAAADg/x4AAAAGAAQAAADc/x4AAAAGAAQAAADY/xoAAAAGAAMAAADY/x4AAAAGAAQAAAAWABsAAAAFAAMAAAAWAB8AAAAFAAQAAAA4ABYAAAAHAAMAAAA4ABoAAAAGAAQAAAA4AB4AAAAGAAQAAAA0ABYAAAAGAAMAAAA0AB4AAAAGAAQAAAA0ABoAAAAGAAQAAABKABoAAAAGAAMAAABKAB4AAAAGAAQAAABOABoAAAAGAAMAAABOAB4AAAAGAAQAAABSABoAAAAGAAMAAABSAB4AAAAGAAQAAABWABoAAAAGAAMAAABWAB4AAAAGAAQAAABaABoAAAADAAQAAABaAB4AAAADAAUAAABdACIAAAAGAAQAAABeAB4AAAAGAAMAAABhACIAAAAGAAQAAABiAB4AAAAGAAMAAABlACIAAAAGAAQAAABmAB4AAAAGAAMAAABpACIAAAAGAAQAAABqABoAAAAAAAQAAABqAB4AAAAAAAUAAABuABoAAAAGAAMAAABuAB4AAAAGAAQAAAByABoAAAAGAAMAAAByAB4AAAAGAAQAAAB2ABoAAAAGAAMAAAB2AB4AAAAGAAQAAAB6ABoAAAAGAAMAAAB6AB4AAAAGAAQAAAB+ABoAAAAHAAMAAAB+AB4AAAAHAAQAAAAjABoAAAAFAAMAAAAjAB4AAAAFAAQAAAAmABoAAAAGAAMAAAAlAB4AAAAGAAQAAAAcABsAAAAHAAMAAAAcAB8AAAAHAAQAAAAZABsAAAAGAAMAAAAZAB8AAAAGAAQAAACFABoAAAAFAAMAAACJABoAAAAGAAMAAACFAB4AAAAFAAQAAACJAB4AAAAGAAQAAAA=")
+tile_map_data = PackedByteArray("AADY/xwAAAAGAAMAAADY/yAAAAAGAAQAAADc/xwAAAAGAAMAAADc/yAAAAAGAAQAAADg/xwAAAAGAAMAAADg/yAAAAAGAAQAAADk/xwAAAAGAAMAAADk/yAAAAAGAAQAAADo/xwAAAADAAQAAADo/yAAAAADAAUAAADr/yQAAAAGAAQAAADs/yAAAAAGAAMAAADv/yQAAAAGAAQAAADw/yAAAAAGAAMAAADz/yQAAAAGAAQAAAD0/yAAAAAGAAMAAAD3/yQAAAAGAAQAAAD4/xwAAAAAAAQAAAD4/yAAAAAAAAUAAAD8/xwAAAAGAAMAAAD8/yAAAAAGAAQAAAAAABwAAAAGAAMAAAAAACAAAAAGAAQAAAAEABwAAAAGAAMAAAAEACAAAAAGAAQAAAAIABwAAAAGAAMAAAAIACAAAAAGAAQAAAAMABwAAAAHAAMAAAAMACAAAAAHAAQAAAAWAB0AAAAFAAMAAAAWACEAAAAFAAQAAAAZAB0AAAAGAAMAAAAZACEAAAAGAAQAAAAcAB0AAAAHAAMAAAAcACEAAAAHAAQAAAA=")
 tile_set = SubResource("TileSet_mdlyc")
 
 [node name="Area2D2" parent="Background/Ground" unique_id=1656266706 instance=ExtResource("12_06is1")]
-position = Vector2(-233, 442)
-
-[node name="Area2D3" parent="Background/Ground" unique_id=92892777 instance=ExtResource("13_ohu22")]
-position = Vector2(677, 412)
+position = Vector2(-241, 486)
 
 [node name="Area2D" parent="Background/Ground" unique_id=1652384608 instance=ExtResource("11_36vcg")]
-position = Vector2(396, 377)
+position = Vector2(401, 434)
 monitoring = false
-
-[node name="Area2D4" parent="Background/Ground" unique_id=227646897 instance=ExtResource("11_36vcg")]
-position = Vector2(1580, 450)
-
-[node name="Area2D5" parent="Background/Ground" unique_id=454367726 instance=ExtResource("12_06is1")]
-position = Vector2(1810, 410)
-
-[node name="Area2D6" parent="Background/Ground" unique_id=1775663227 instance=ExtResource("13_ohu22")]
-position = Vector2(1251, 395)
 
 [node name="Water" type="TileMapLayer" parent="Background" unique_id=751645028]
 modulate = Color(0.1882353, 0.7176471, 0.8, 1)
@@ -175,7 +171,7 @@ shape = SubResource("WorldBoundaryShape2D_0lgt3")
 
 [node name="Player_run" parent="Background" unique_id=1818597459 node_paths=PackedStringArray("label") instance=ExtResource("10_cc7yl")]
 z_index = 1
-position = Vector2(129, 399)
+position = Vector2(124, 422)
 label = NodePath("../../Label")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=79057944]
@@ -264,5 +260,17 @@ label_settings = SubResource("LabelSettings_0lgt3")
 [node name="Timer" type="Timer" parent="." unique_id=83014648]
 autostart = true
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=706702410]
+position = Vector2(1188, 179)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1414728855]
+position = Vector2(335, 417)
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1947200705]
+position = Vector2(108, -45)
+shape = SubResource("RectangleShape2D_hdewa")
+
 [connection signal="pressed" from="Button" to="." method="_pause"]
 [connection signal="timeout" from="Timer" to="." method="_XP"]
+[connection signal="body_entered" from="Area2D" to="Background" method="_spawn_land"]

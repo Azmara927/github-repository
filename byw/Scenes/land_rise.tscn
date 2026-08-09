@@ -1,0 +1,111 @@
+[gd_scene format=4 uid="uid://bieda4ooyxfn5"]
+
+[ext_resource type="Script" uid="uid://cp51fwmdodr5l" path="res://Scripts/land_movement.gd" id="1_heslc"]
+[ext_resource type="Texture2D" uid="uid://c2rwelw6j26os" path="res://Assets/Tilemap_grass.png" id="1_widf4"]
+[ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="2_heslc"]
+[ext_resource type="PackedScene" uid="uid://v3dsdp7se2b1" path="res://Scenes/enemy.tscn" id="3_c5qsy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kcen"]
+texture = ExtResource("1_widf4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(31.610535, -29.917116, -25.401321, -23.707905, -27.094746, -2.2578964, -27.659218, 21.450005, 32.739487, 28.223694)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.17501, -33.30396, -5.080265, -27.094746, 31.046066, -32.739487, 31.610535, 31.046059, 1.1289482, 24.836853, -32.739483, 29.917114)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.610535, -29.917116, 19.756584, -27.65922, 30.052582, 1.3660278, 22.539436, 26.63752, -32.739483, 30.48159)
+8:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(31.610535, -30.48159, 31.610535, 32.17501, -29.917114, 32.739487)
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.17501, -29.917116, 27.659218, 32.739487, -32.739483, 31.610535)
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28.223692, -31.046064, -26.53027, 22.01448, 30.48159, 31.610535, 33.303963, -32.17501)
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.303955, -32.17501, 25.965797, -31.610538, 25.965797, 26.530273, -32.17501, 27.094742)
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5560g"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5kcen")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_heslc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heslc"]
+size = Vector2(20, 650)
+
+[node name="Node2D" type="Node2D" unique_id=766193214]
+script = ExtResource("1_heslc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1019295503]
+tile_map_data = PackedByteArray("AAACAAkAAAAFAAMAAAACAA0AAAAGAAQAAAAGAAkAAAAGAAMAAAAGAA0AAAAGAAQAAAAKAAUAAAAAAAQAAAAKAAkAAAAAAAUAAAAKAA0AAAAGAAQAAAAOAAUAAAAGAAMAAAAOAAkAAAAGAAQAAAAOAA0AAAAGAAQAAAASAAUAAAAGAAMAAAAWAAUAAAAGAAMAAAASAAkAAAAGAAQAAAAWAAkAAAAGAAQAAAASAA0AAAAGAAQAAAAWAA0AAAAGAAQAAAAaAAUAAAAGAAMAAAAaAAkAAAAGAAQAAAAaAA0AAAAGAAQAAAAeAAUAAAAGAAMAAAAeAAkAAAAGAAQAAAAeAA0AAAAGAAQAAAAiAAUAAAADAAQAAAAiAAkAAAADAAUAAAAiAA0AAAAGAAQAAAAmAAkAAAAGAAMAAAAmAA0AAAAGAAQAAAAqAAkAAAAHAAMAAAAqAA0AAAAGAAQAAAA=")
+tile_set = SubResource("TileSet_5560g")
+
+[node name="Area2D" parent="." unique_id=1652384608 instance=ExtResource("2_heslc")]
+position = Vector2(105, 133)
+
+[node name="Area2D2" parent="." unique_id=575903139 instance=ExtResource("2_heslc")]
+position = Vector2(585, 112)
+
+[node name="Area2D3" parent="." unique_id=1656266706 instance=ExtResource("3_c5qsy")]
+position = Vector2(332, 75)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1007772591]
+position = Vector2(4, 132)
+collision_layer = 8
+collision_mask = 8
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1269121563]
+shape = SubResource("CircleShape2D_heslc")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=342055807]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=1869660696]
+position = Vector2(0, 315)
+shape = SubResource("RectangleShape2D_heslc")

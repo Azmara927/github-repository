@@ -26,8 +26,21 @@
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="AudioStream" uid="uid://gts74qkxo53y" path="res://Assets/Sounds/mouse_click.mp3" id="21_5aq6m"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
+[ext_resource type="Texture2D" uid="uid://yvq820vm507r" path="res://Assets/Buildings/Blue_archery.png" id="22_bnu4f"]
+[ext_resource type="Texture2D" uid="uid://0pu41nv5g7p1" path="res://Assets/Dust.png" id="22_ov5w8"]
 [ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings.tscn" id="23_dumge"]
+[ext_resource type="Texture2D" uid="uid://c4wahc54kbeju" path="res://Assets/Buildings/Red_archery.png" id="23_ov5w8"]
 [ext_resource type="PackedScene" uid="uid://do3elox8qhywb" path="res://Scenes/save.tscn" id="24_pfmft"]
+[ext_resource type="Texture2D" uid="uid://dy0t5xxkby5en" path="res://Assets/Buildings/Red_barracks.png" id="25_ckgix"]
+[ext_resource type="Texture2D" uid="uid://ddpgmwvafo7qc" path="res://Assets/Buildings/Blue_barracks.png" id="26_t8u3c"]
+[ext_resource type="Texture2D" uid="uid://vywifnruke33" path="res://Assets/Buildings/Blue_castle.png" id="28_n5cpx"]
+[ext_resource type="Texture2D" uid="uid://c7l6nwv5elonc" path="res://Assets/Buildings/Red_castle.png" id="29_ai02y"]
+[ext_resource type="Texture2D" uid="uid://d0w2w5plj1mj0" path="res://Assets/Buildings/Blue_tower.png" id="31_pcp55"]
+[ext_resource type="Texture2D" uid="uid://dxlx75tujt04j" path="res://Assets/Buildings/Red_tower.png" id="32_11b8l"]
+[ext_resource type="Texture2D" uid="uid://bs2r4sdk35h0a" path="res://Assets/Buildings/Blue_house.png" id="34_g3s50"]
+[ext_resource type="Texture2D" uid="uid://bh4ohue6vbk0s" path="res://Assets/Buildings/Red_house.png" id="35_j7f23"]
+[ext_resource type="Texture2D" uid="uid://dhoarl34mum3n" path="res://Assets/Buildings/Blue_monastery.png" id="37_0j5ni"]
+[ext_resource type="Texture2D" uid="uid://cpva47uy27sic" path="res://Assets/Buildings/Red_monastery.png" id="38_2gi4k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -238,6 +251,84 @@ font_size = 45
 font = ExtResource("14_6hulr")
 font_size = 45
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckgix"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8u3c"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5cpx"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai02y"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcp55"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11b8l"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3s50"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7f23"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j5ni"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gi4k"]
+atlas = ExtResource("22_ov5w8")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr4qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckgix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8u3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5cpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai02y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcp55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11b8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3s50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7f23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j5ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gi4k")
+}],
+"loop": false,
+"name": &"construction",
+"speed": 4.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_4a88i"]
 font = ExtResource("19_8cvfu")
 font_size = 24
@@ -390,13 +481,15 @@ custom_minimum_size = Vector2(60, 54)
 layout_mode = 2
 texture = ExtResource("12_q4yjo")
 
-[node name="BlackArchery" type="Sprite2D" parent="." unique_id=1069802119]
+[node name="Buildings" type="Node2D" parent="." unique_id=649981577]
+script = ExtResource("16_nitb1")
+
+[node name="BlackArchery" type="Sprite2D" parent="Buildings" unique_id=1069802119]
 position = Vector2(164, 94)
 scale = Vector2(1.1354166, 1.0234375)
 texture = ExtResource("15_6kno7")
-script = ExtResource("16_nitb1")
 
-[node name="TextureButton" type="TextureButton" parent="BlackArchery" unique_id=24052836]
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackArchery" unique_id=24052836]
 offset_left = -83.66973
 offset_top = -49.832058
 offset_right = 62.01835
@@ -405,15 +498,162 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="NinePatchRect" parent="BlackArchery" unique_id=162148017 instance=ExtResource("18_cs4iy")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Buildings/BlackArchery" unique_id=1320108043]
+stream = ExtResource("21_5aq6m")
+
+[node name="BlueArchery" type="Sprite2D" parent="Buildings" unique_id=846118573]
+visible = false
+position = Vector2(167.5, 95.00002)
+scale = Vector2(1.1510415, 1.015625)
+texture = ExtResource("22_bnu4f")
+
+[node name="RedArchery" type="Sprite2D" parent="Buildings" unique_id=704060253]
+visible = false
+position = Vector2(163, 95.00001)
+scale = Vector2(1.1354166, 0.99999994)
+texture = ExtResource("23_ov5w8")
+
+[node name="BlackBarracks" type="Sprite2D" parent="Buildings" unique_id=1356545040]
+position = Vector2(966, 437.75)
+scale = Vector2(1.3229163, 1.1464844)
+texture = ExtResource("16_uylqo")
+
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackBarracks" unique_id=2131821302]
+offset_left = -74.07876
+offset_top = -58.22146
+offset_right = 61.22831
+offset_bottom = 97.908
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlueBarracks" type="Sprite2D" parent="Buildings/BlackBarracks" unique_id=2100718239]
+visible = false
+position = Vector2(-6.8031006, -0.10903931)
+scale = Vector2(1.0866141, 1.0042591)
+texture = ExtResource("26_t8u3c")
+
+[node name="RedBarracks" type="Sprite2D" parent="Buildings/BlackBarracks" unique_id=1898568843]
+visible = false
+position = Vector2(-0.7558594, -1.090271)
+scale = Vector2(0.99212587, 1.0051106)
+texture = ExtResource("25_ckgix")
+
+[node name="BlackCastle" type="Sprite2D" parent="Buildings" unique_id=1245226057]
+position = Vector2(611, 235)
+scale = Vector2(1.065625, 1.0664063)
+texture = ExtResource("17_nitb1")
+
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackCastle" unique_id=672104868]
+offset_left = -102.28746
+offset_top = -96.58609
+offset_right = 113.71254
+offset_bottom = 136.41391
+texture_normal = ExtResource("21_uylqo")
+
+[node name="BlueCastle" type="Sprite2D" parent="Buildings/BlackCastle" unique_id=738165080]
+visible = false
+position = Vector2(0.9383545, 0.4688629)
+scale = Vector2(0.9970675, 0.9926741)
+texture = ExtResource("28_n5cpx")
+
+[node name="RedCastle" type="Sprite2D" parent="Buildings/BlackCastle" unique_id=1062527356]
+visible = false
+position = Vector2(0.9383435, 3.9339066e-06)
+scale = Vector2(1.0029327, 0.989011)
+texture = ExtResource("29_ai02y")
+
+[node name="BlackTower" type="Sprite2D" parent="Buildings" unique_id=2077395167]
+position = Vector2(124, 428)
+scale = Vector2(1.234375, 1.2968748)
+texture = ExtResource("18_dumge")
+
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackTower" unique_id=1940286892]
+offset_left = -59.13924
+offset_top = -10.024097
+offset_right = 62.683537
+offset_bottom = 97.92772
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlueTower" type="Sprite2D" parent="Buildings/BlackTower" unique_id=1438229916]
+visible = false
+position = Vector2(0.40506744, 0)
+scale = Vector2(1.006329, 1)
+texture = ExtResource("31_pcp55")
+
+[node name="RedTower" type="Sprite2D" parent="Buildings/BlackTower" unique_id=1735555994]
+visible = false
+position = Vector2(-0.81012726, 2.313261)
+texture = ExtResource("32_11b8l")
+
+[node name="BlackHouse" type="Sprite2D" parent="Buildings" unique_id=1946692408]
+position = Vector2(604, 471)
+scale = Vector2(1.3437499, 1.1666667)
+texture = ExtResource("19_pfmft")
+
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackHouse" unique_id=1291119467]
+offset_left = -52.093033
+offset_top = -45.42859
+offset_right = 50.60463
+offset_bottom = 88.285675
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlueHouse" type="Sprite2D" parent="Buildings/BlackHouse" unique_id=1105844249]
+visible = false
+position = Vector2(0, 2.1428528)
+scale = Vector2(0.9999999, 0.9955355)
+texture = ExtResource("34_g3s50")
+
+[node name="RedHouse" type="Sprite2D" parent="Buildings/BlackHouse" unique_id=7783600]
+visible = false
+position = Vector2(1.1920929e-06, 7.6293945e-06)
+texture = ExtResource("35_j7f23")
+
+[node name="BlackMonastery" type="Sprite2D" parent="Buildings" unique_id=2053013228]
+position = Vector2(1032.5, 112.5)
+scale = Vector2(1.1614584, 1.053125)
+texture = ExtResource("20_cs4iy")
+
+[node name="TextureButton" type="TextureButton" parent="Buildings/BlackMonastery" unique_id=1302927726]
+offset_left = -80.50224
+offset_top = -14.7181
+offset_right = 76.19734
+offset_bottom = 163.68251
+texture_normal = ExtResource("21_uylqo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlueMonastery" type="Sprite2D" parent="Buildings/BlackMonastery" unique_id=193610650]
+visible = false
+position = Vector2(-5.6266785e-05, -2.4925709)
+scale = Vector2(0.98206294, 1.0215132)
+texture = ExtResource("37_0j5ni")
+
+[node name="RedMonastery" type="Sprite2D" parent="Buildings/BlackMonastery" unique_id=1289231819]
+visible = false
+position = Vector2(-0.43048096, -4.272995)
+texture = ExtResource("38_2gi4k")
+
+[node name="Construction" type="AnimatedSprite2D" parent="Buildings" unique_id=964340413]
+visible = false
+position = Vector2(380, 229)
+scale = Vector2(2.2976546, 2.269171)
+sprite_frames = SubResource("SpriteFrames_nr4qj")
+animation = &"construction"
+
+[node name="NinePatchRect" parent="Buildings" unique_id=162148017 instance=ExtResource("18_cs4iy")]
 visible = false
 z_index = 1
-offset_left = 71.33946
-offset_top = -21.496185
-offset_right = 273.90826
-offset_bottom = 187.60304
+offset_left = 267.0
+offset_top = 79.0
+offset_right = 469.5688
+offset_bottom = 288.09924
 
-[node name="Label" type="Label" parent="BlackArchery/NinePatchRect" unique_id=1629747897]
+[node name="Label" type="Label" parent="Buildings/NinePatchRect" unique_id=1629747897]
 layout_mode = 0
 offset_left = 22.899097
 offset_top = 24.427479
@@ -423,7 +663,7 @@ text = "ARCHERY"
 label_settings = SubResource("LabelSettings_4a88i")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="BlackArchery/NinePatchRect" unique_id=1261766842]
+[node name="Button" type="Button" parent="Buildings/NinePatchRect" unique_id=1261766842]
 layout_mode = 0
 offset_left = 65.17432
 offset_top = 29.312979
@@ -433,7 +673,7 @@ icon = ExtResource("20_5aq6m")
 flat = true
 expand_icon = true
 
-[node name="Label" type="Label" parent="BlackArchery/NinePatchRect/Button" unique_id=1295276240]
+[node name="Label" type="Label" parent="Buildings/NinePatchRect/Button" unique_id=1295276240]
 layout_mode = 0
 offset_left = 32.58716
 offset_top = 48.854958
@@ -442,7 +682,7 @@ offset_bottom = 80.85496
 text = "BUY"
 label_settings = SubResource("LabelSettings_dctp6")
 
-[node name="Label2" type="Label" parent="BlackArchery/NinePatchRect" unique_id=1320922436]
+[node name="Label2" type="Label" parent="Buildings/NinePatchRect" unique_id=1320922436]
 layout_mode = 0
 offset_left = 36.99083
 offset_top = 127.99999
@@ -451,77 +691,6 @@ offset_bottom = 155.0
 text = " x $100"
 label_settings = SubResource("LabelSettings_kqqo1")
 horizontal_alignment = 1
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BlackArchery" unique_id=1320108043]
-stream = ExtResource("21_5aq6m")
-
-[node name="BlackBarracks" type="Sprite2D" parent="." unique_id=1356545040]
-position = Vector2(966, 437.75)
-scale = Vector2(1.3229163, 1.1464844)
-texture = ExtResource("16_uylqo")
-
-[node name="TextureButton" type="TextureButton" parent="BlackBarracks" unique_id=2131821302]
-offset_left = -74.07876
-offset_top = -58.22146
-offset_right = 61.22831
-offset_bottom = 97.908
-texture_normal = ExtResource("21_uylqo")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BlackCastle" type="Sprite2D" parent="." unique_id=1245226057]
-position = Vector2(628.00006, 237)
-scale = Vector2(1.065625, 1.0664063)
-texture = ExtResource("17_nitb1")
-
-[node name="TextureButton" type="TextureButton" parent="BlackCastle" unique_id=672104868]
-offset_left = -102.28746
-offset_top = -96.58609
-offset_right = 113.71254
-offset_bottom = 136.41391
-texture_normal = ExtResource("21_uylqo")
-
-[node name="BlackTower" type="Sprite2D" parent="." unique_id=2077395167]
-position = Vector2(124, 428)
-scale = Vector2(1.234375, 1.2968748)
-texture = ExtResource("18_dumge")
-
-[node name="TextureButton" type="TextureButton" parent="BlackTower" unique_id=1940286892]
-offset_left = -59.13924
-offset_top = -10.024097
-offset_right = 62.683537
-offset_bottom = 97.92772
-texture_normal = ExtResource("21_uylqo")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BlackHouse" type="Sprite2D" parent="." unique_id=1946692408]
-position = Vector2(604, 471)
-scale = Vector2(1.3437499, 1.1666667)
-texture = ExtResource("19_pfmft")
-
-[node name="TextureButton" type="TextureButton" parent="BlackHouse" unique_id=1291119467]
-offset_left = -52.093033
-offset_top = -45.42859
-offset_right = 50.60463
-offset_bottom = 88.285675
-texture_normal = ExtResource("21_uylqo")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BlackMonastery" type="Sprite2D" parent="." unique_id=2053013228]
-position = Vector2(1032.5, 112.5)
-scale = Vector2(1.1614584, 1.053125)
-texture = ExtResource("20_cs4iy")
-
-[node name="TextureButton" type="TextureButton" parent="BlackMonastery" unique_id=1302927726]
-offset_left = -80.50224
-offset_top = -14.7181
-offset_right = 76.19734
-offset_bottom = 163.68251
-texture_normal = ExtResource("21_uylqo")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Control" parent="." unique_id=1366339947 instance=ExtResource("23_dumge")]
 visible = false
@@ -541,10 +710,10 @@ offset_right = 34.0
 [connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
-[connection signal="pressed" from="BlackArchery/TextureButton" to="BlackArchery" method="_button_archery"]
-[connection signal="pressed" from="BlackArchery/NinePatchRect/Button" to="BlackArchery" method="_buy_archery"]
-[connection signal="pressed" from="BlackBarracks/TextureButton" to="BlackArchery" method="black_barracks"]
-[connection signal="pressed" from="BlackCastle/TextureButton" to="BlackArchery" method="black_castle"]
-[connection signal="pressed" from="BlackTower/TextureButton" to="BlackArchery" method="black_tower"]
-[connection signal="pressed" from="BlackHouse/TextureButton" to="BlackArchery" method="black_house"]
-[connection signal="pressed" from="BlackMonastery/TextureButton" to="BlackArchery" method="black_monastery"]
+[connection signal="pressed" from="Buildings/BlackArchery/TextureButton" to="Buildings" method="_black_archery"]
+[connection signal="pressed" from="Buildings/BlackBarracks/TextureButton" to="Buildings" method="_black_barracks"]
+[connection signal="pressed" from="Buildings/BlackCastle/TextureButton" to="Buildings" method="_black_castle"]
+[connection signal="pressed" from="Buildings/BlackTower/TextureButton" to="Buildings" method="_black_tower"]
+[connection signal="pressed" from="Buildings/BlackHouse/TextureButton" to="Buildings" method="_black_house"]
+[connection signal="pressed" from="Buildings/BlackMonastery/TextureButton" to="Buildings" method="_black_monastery"]
+[connection signal="pressed" from="Buildings/NinePatchRect/Button" to="Buildings" method="_buy_archery"]

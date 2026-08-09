@@ -12,6 +12,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#Go back button: when clicked hides the save menu
 func _back() -> void:
 	save.hide()

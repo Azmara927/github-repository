@@ -21,13 +21,15 @@ func _process(delta: float) -> void:
 #func _pause() -> void:
 #	get_tree().call_deferred("change_scene_to_file", "res://scenes/pause.tscn")
 
-
+#XP coding
 func _XP() -> void:
 	XP += 1 * 17
 	XP_label.text = str(XP)
+#Record XP value in global so that it can be displayed in death scene
 	Global.XP_this_run = XP
 
 
+#Pause button: Pauses gameplay and shows pause menu
 func _pause() -> void:
 	var pause_menu = preload("res://Scenes/pause.tscn").instantiate()
 	add_child(pause_menu)

@@ -1,0 +1,115 @@
+[gd_scene format=4 uid="uid://doh7amss5gkye"]
+
+[ext_resource type="Script" uid="uid://cp51fwmdodr5l" path="res://Scripts/land_movement.gd" id="1_2ory0"]
+[ext_resource type="Texture2D" uid="uid://c2rwelw6j26os" path="res://Assets/Tilemap_grass.png" id="1_gu805"]
+[ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="2_wr5rd"]
+[ext_resource type="PackedScene" uid="uid://v3dsdp7se2b1" path="res://Scenes/enemy.tscn" id="3_2ory0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tsgk1"]
+texture = ExtResource("1_gu805")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(30.735596, -29.369576, -21.17342, -27.320534, -28.003551, 23.222458, 30.052582, 30.05259)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30.481586, -33.30396, -2.2578926, -24.836851, 31.046066, -32.739487, 32.17501, 29.917114, -1.1289444, 25.401321, -33.303955, 32.739487)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.04606, -31.046064, 18.063164, -26.530273, 26.530273, -3.9513168, 27.659218, 20.32106, -28.788166, 29.352638)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.272373, -27.094746, -0.46650696, -24.25838, 20.526318, -24.724888, 27.52393, -0.93301773, 23.325367, 25.657902, -0.9330139, 27.057423, -26.590916, 24.724888, -29.856466, -1.3995247)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(32.739487, -31.046064, 30.48159, 30.48159, -29.35264, 31.610535)
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.10163, -30.735603, 29.369576, 32.10163, -33.46766, 30.05259)
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(32.17501, 28.78817, -24.272373, 24.836853, -31.610535, -32.739487, 32.739487, -32.739487)
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.17501, -32.739487, 27.659218, -32.739487, 28.223694, 24.836853, -31.04606, 27.094742)
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wr5rd"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tsgk1")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ory0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ory0"]
+size = Vector2(20, 657)
+
+[node name="Node2D" type="Node2D" unique_id=1401065001]
+script = ExtResource("1_2ory0")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=542271592]
+tile_map_data = PackedByteArray("AAADABUAAAAFAAMAAAALABEAAAAIAAMAAAALABUAAAAIAAQAAAAPABEAAAAIAAQAAAAPAA0AAAAIAAMAAAATAA0AAAAIAAQAAAATAAkAAAAIAAMAAAAHABUAAAAHAAMAAAAXAAUAAAAFAAMAAAAbAAUAAAAGAAMAAAAfAAUAAAAHAAMAAAAlABEAAAAFAAMAAAApABEAAAAHAAMAAAAlABUAAAAFAAQAAAApABUAAAAHAAQAAAAfAAkAAAAHAAQAAAAXAAkAAAAFAAQAAAAbAAkAAAAGAAQAAAAHABkAAAAHAAQAAAADABkAAAAFAAQAAAA=")
+tile_set = SubResource("TileSet_wr5rd")
+
+[node name="Area2D" parent="." unique_id=1652384608 instance=ExtResource("2_wr5rd")]
+position = Vector2(81, 290)
+
+[node name="Area2D2" parent="." unique_id=1656266706 instance=ExtResource("3_2ory0")]
+position = Vector2(181, 244)
+
+[node name="Area2D3" parent="." unique_id=1630580018 instance=ExtResource("2_wr5rd")]
+position = Vector2(428, 47)
+
+[node name="Area2D4" parent="." unique_id=929950247 instance=ExtResource("2_wr5rd")]
+position = Vector2(625, 247)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1583305140]
+position = Vector2(4, 132)
+collision_layer = 8
+collision_mask = 8
+sync_to_physics = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1570958486]
+shape = SubResource("CircleShape2D_2ory0")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=1644523849]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1170291285]
+position = Vector2(0, 318.5)
+shape = SubResource("RectangleShape2D_2ory0")

@@ -121,6 +121,7 @@ text = "Music"
 label_settings = SubResource("LabelSettings_ydjp5")
 
 [node name="SFX" type="HSlider" parent="." unique_id=1606253437]
+z_index = 1
 layout_mode = 0
 offset_left = 633.0
 offset_top = 243.0

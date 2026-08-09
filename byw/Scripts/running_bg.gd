@@ -7,17 +7,23 @@ var score: int = 0
 @export var bg_3 : Node
 @export var player : Node
 @export var coins_run :Node
+@export var land_spawn :Marker2D
+
+@export var land_scenes: Array[PackedScene]
 
 
+# For the background to move along with the character smootlhy
 func _process(delta):
 	#bg_1.global_position.x -= 50 * delta
+# SKY
 	bg_2.global_position.x -= 150 * delta
 	#bg_3.global_position.x -= 50 * delta
 	#player.global_position.x -= 80 * delta
 	#if bg_1.global_position.x <= 0:
 		#bg_1.global_position.x = 1000
-	if bg_2.global_position.x <= -1157:
-		bg_2.global_position.x = 660
+# GROUND
+	if bg_2.global_position.x <= -1550:
+		bg_2.global_position.x = 0
 		for object in bg_2.get_children():
 			object.show()
 	#if bg_3.global_position.x <= 0:
@@ -45,3 +51,9 @@ func coins(body: Node2D) -> void:
 	if Input.is_action_pressed("ui_up"):
 		score += 1
 		print(score)
+
+
+func _spawn_land(body: Node2D) -> void:
+	var land = land_scenes[randi_range(0, len(land_scenes) - 1)].instantiate()
+	print("spawn")
+	land_spawn.call_deferred("add_child", land)

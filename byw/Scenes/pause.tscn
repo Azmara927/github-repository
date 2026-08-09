@@ -16,6 +16,7 @@ font_size = 36
 
 [node name="Control" type="Control" unique_id=620929370]
 process_mode = 3
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
