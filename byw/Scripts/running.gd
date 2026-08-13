@@ -3,7 +3,7 @@ extends Node2D
 
 var XP: int = 0
 
-@onready var XP_label = $XP
+@onready var XP_label = $CanvasLayer/XP
 
 @export var timer: Timer
 

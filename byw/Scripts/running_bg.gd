@@ -16,7 +16,7 @@ var score: int = 0
 func _process(delta):
 	#bg_1.global_position.x -= 50 * delta
 # SKY
-	bg_2.global_position.x -= 150 * delta
+	#bg_2.global_position.x -= 150 * delta
 	#bg_3.global_position.x -= 50 * delta
 	#player.global_position.x -= 80 * delta
 	#if bg_1.global_position.x <= 0:
@@ -34,7 +34,7 @@ func _process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,7 +53,13 @@ func coins(body: Node2D) -> void:
 		print(score)
 
 
-func _spawn_land(body: Node2D) -> void:
+func spawn_land() -> void:
 	var land = land_scenes[randi_range(0, len(land_scenes) - 1)].instantiate()
 	print("spawn")
-	land_spawn.call_deferred("add_child", land)
+	land.ground_manager = self
+	land.global_position = land_spawn.global_position
+	call_deferred("add_child", land)
+
+
+func _start_land_spawn(body: Node2D) -> void:
+	spawn_land()

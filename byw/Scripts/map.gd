@@ -9,7 +9,7 @@ extends Node2D
 @onready var run_button: Button = $ButtonRun
 @onready var help: Control = $Control
 @onready var save: Control = $Save_option
-@onready var price: NinePatchRect = $BlackArchery/NinePatchRect
+@onready var price: NinePatchRect = $Buildings/NinePatchRect
 @onready var mouse_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
@@ -41,8 +41,8 @@ func _ready() -> void:
 	total_coins.text = str(Global.coins_this_run)
 
 		
-#Coins collected
-	Global.total_coins_earned += Global.coins_this_run
+# Total coins collected displayed in map
+	Global.total_coins_earned = Global.total_coins_earned + Global.coins_this_run
 	total_coins.text = str(Global.total_coins_earned)
 
 
