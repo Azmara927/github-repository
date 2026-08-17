@@ -8,6 +8,7 @@ var current_building = null
 @onready var price: Label = $NinePatchRect/Label2
 @onready var mouse_click: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 @onready var construction: AnimatedSprite2D = $Construction_effect/Construction
+@onready var total_coins_label: Label = $"../Label2"
 
 
 # Variables for lock button
@@ -151,3 +152,5 @@ func _buy_button_pressed() -> void:
 	if current_building == null:
 		return
 	current_building.buy()
+	total_coins_label.text = str(Global.total_coins_earned)
+	

@@ -3,9 +3,10 @@ extends Node
 
 @export var price: int = 100
 @export var old_building: Sprite2D 
-@export var owned_building: Sprite2D
+@export var owned_building: TextureButton
 @export var lock: TextureButton
 @export var construction_position: Vector2
+
 
 # @onready var construction_effect: Node2D = $"../Construction_effect"
 @onready var construction: AnimatedSprite2D = $"../Construction"

@@ -6,6 +6,15 @@ var total_coins_earned: int = 0
 var XP_this_run: int = 0
 var high_score: int = 0
 var total_buildings: int = 0
+var archery_owned: bool = false
+var baracks_owned: bool = false
+var castle_owned: bool = false
+var tower_owned: bool = false
+var house_owned: bool = false
+var monastery_owned: bool = false
+
+@onready var archery: Sprite2D = $Buildings/BlackArchery
+
 
 
 # @export var coins_run = Label
@@ -13,9 +22,6 @@ var total_buildings: int = 0
 
 
 
-# Called when the node enters the scene tree for the first time.
-func update_total_coins():
-	total_coins_earned + coins_this_run
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
