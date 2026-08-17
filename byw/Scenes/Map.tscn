@@ -530,7 +530,7 @@ stretch_mode = 0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Buildings/BlackArchery" unique_id=1320108043]
 stream = ExtResource("21_5aq6m")
 
-[node name="BlueArchery" type="TextureButton" parent="Buildings" unique_id=1191201917]
+[node name="BlueArchery" type="TextureButton" parent="Buildings" unique_id=1191201917 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 71.0
 offset_top = -44.0
@@ -540,12 +540,18 @@ scale = Vector2(1.1510415, 1.015625)
 texture_normal = ExtResource("22_bnu4f")
 stretch_mode = 4
 script = ExtResource("21_ai02y")
+price = 8
+owned_building = NodePath(".")
+sell_building = NodePath("../RedArchery")
 
-[node name="RedArchery" type="Sprite2D" parent="Buildings" unique_id=704060253]
+[node name="RedArchery" type="TextureButton" parent="Buildings" unique_id=1816081247]
 visible = false
-position = Vector2(163, 95.00002)
+offset_left = 55.0
+offset_top = -32.999992
+offset_right = 247.0
+offset_bottom = 223.0
 scale = Vector2(1.1354166, 0.9999998)
-texture = ExtResource("23_ov5w8")
+texture_normal = ExtResource("23_ov5w8")
 
 [node name="BlackBarracks" type="Sprite2D" parent="Buildings" unique_id=1356545040 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(966, 437.75)
@@ -567,7 +573,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueBarracks" type="TextureButton" parent="Buildings" unique_id=466992212]
+[node name="BlueBarracks" type="TextureButton" parent="Buildings" unique_id=466992212 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 829.0
 offset_top = 293.0
@@ -578,12 +584,19 @@ texture_normal = ExtResource("26_t8u3c")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("21_ai02y")
+price = 10
+owned_building = NodePath(".")
+sell_building = NodePath("../RedBarracks")
 
-[node name="RedBarracks" type="Sprite2D" parent="Buildings" unique_id=1898568843]
+[node name="RedBarracks" type="TextureButton" parent="Buildings" unique_id=274247434]
 visible = false
-position = Vector2(965.00006, 436.50003)
+offset_left = 839.00006
+offset_top = 293.00006
+offset_right = 1031.0
+offset_bottom = 549.00006
 scale = Vector2(1.3124994, 1.1523436)
-texture = ExtResource("25_ckgix")
+texture_normal = ExtResource("25_ckgix")
+stretch_mode = 0
 
 [node name="BlackCastle" type="Sprite2D" parent="Buildings" unique_id=1245226057 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(611, 235)
@@ -603,7 +616,7 @@ offset_right = 113.71254
 offset_bottom = 136.41391
 texture_normal = ExtResource("21_uylqo")
 
-[node name="BlueCastle" type="TextureButton" parent="Buildings" unique_id=1926965508]
+[node name="BlueCastle" type="TextureButton" parent="Buildings" unique_id=1926965508 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 442.0
 offset_top = 98.0
@@ -612,12 +625,19 @@ offset_bottom = 354.0
 scale = Vector2(1.0625, 1.0585939)
 texture_normal = ExtResource("28_n5cpx")
 script = ExtResource("21_ai02y")
+price = 10
+owned_building = NodePath(".")
+sell_building = NodePath("../RedCastle")
 
-[node name="RedCastle" type="Sprite2D" parent="Buildings" unique_id=1062527356]
+[node name="RedCastle" type="TextureButton" parent="Buildings" unique_id=1350921246]
 visible = false
-position = Vector2(611.99994, 235)
+offset_left = 440.0
+offset_top = 99.0
+offset_right = 760.0
+offset_bottom = 355.0
 scale = Vector2(1.06875, 1.0546875)
-texture = ExtResource("29_ai02y")
+texture_normal = ExtResource("29_ai02y")
+stretch_mode = 0
 
 [node name="BlackTower" type="Sprite2D" parent="Buildings" unique_id=2077395167 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(124, 428)
@@ -639,7 +659,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueTower" type="TextureButton" parent="Buildings" unique_id=1510451753]
+[node name="BlueTower" type="TextureButton" parent="Buildings" unique_id=1510451753 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 43.0
 offset_top = 263.00003
@@ -648,12 +668,19 @@ offset_bottom = 519.0
 scale = Vector2(1.2421874, 1.2968748)
 texture_normal = ExtResource("31_pcp55")
 script = ExtResource("21_ai02y")
+price = 6
+owned_building = NodePath(".")
+sell_building = NodePath("../RedTower")
 
-[node name="RedTower" type="Sprite2D" parent="Buildings" unique_id=1735555994]
+[node name="RedTower" type="TextureButton" parent="Buildings" unique_id=1763982132]
 visible = false
-position = Vector2(123, 431)
+offset_left = 45.000008
+offset_top = 264.00006
+offset_right = 173.0
+offset_bottom = 520.00006
 scale = Vector2(1.234375, 1.2968748)
-texture = ExtResource("32_11b8l")
+texture_normal = ExtResource("32_11b8l")
+stretch_mode = 0
 
 [node name="BlackHouse" type="Sprite2D" parent="Buildings" unique_id=1946692408 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(604, 471)
@@ -675,7 +702,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueHouse" type="TextureButton" parent="Buildings" unique_id=1640151592]
+[node name="BlueHouse" type="TextureButton" parent="Buildings" unique_id=1640151592 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 516.0
 offset_top = 360.0
@@ -684,12 +711,19 @@ offset_bottom = 552.0
 scale = Vector2(1.3437498, 1.1614581)
 texture_normal = ExtResource("34_g3s50")
 script = ExtResource("21_ai02y")
+price = 5
+owned_building = NodePath(".")
+sell_building = NodePath("../RedHouse")
 
-[node name="RedHouse" type="Sprite2D" parent="Buildings" unique_id=7783600]
+[node name="RedHouse" type="TextureButton" parent="Buildings" unique_id=1054123606]
 visible = false
-position = Vector2(604, 471)
+offset_left = 519.0
+offset_top = 359.0
+offset_right = 647.0
+offset_bottom = 551.0
 scale = Vector2(1.3437499, 1.1666667)
-texture = ExtResource("35_j7f23")
+texture_normal = ExtResource("35_j7f23")
+stretch_mode = 0
 
 [node name="BlackMonastery" type="Sprite2D" parent="Buildings" unique_id=2053013228 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(1032.5, 112.5)
@@ -711,7 +745,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueMonastery" type="TextureButton" parent="Buildings" unique_id=513409752]
+[node name="BlueMonastery" type="TextureButton" parent="Buildings" unique_id=513409752 node_paths=PackedStringArray("owned_building", "sell_building")]
 visible = false
 offset_left = 923.0
 offset_top = -59.0
@@ -720,12 +754,19 @@ offset_bottom = 261.0
 scale = Vector2(1.1406252, 1.0757811)
 texture_normal = ExtResource("37_0j5ni")
 script = ExtResource("21_ai02y")
+price = 10
+owned_building = NodePath(".")
+sell_building = NodePath("../RedMonastery")
 
-[node name="RedMonastery" type="Sprite2D" parent="Buildings" unique_id=1289231819]
+[node name="RedMonastery" type="TextureButton" parent="Buildings" unique_id=1172008618]
 visible = false
-position = Vector2(1032, 108)
+offset_left = 920.0
+offset_top = -57.0
+offset_right = 1112.0
+offset_bottom = 263.0
 scale = Vector2(1.1614584, 1.053125)
-texture = ExtResource("38_2gi4k")
+texture_normal = ExtResource("38_2gi4k")
+stretch_mode = 0
 
 [node name="Construction" type="AnimatedSprite2D" parent="Buildings" unique_id=964340413]
 visible = false
@@ -858,3 +899,4 @@ offset_right = 34.0
 [connection signal="pressed" from="Buildings/BlackMonastery/TextureButton" to="Buildings" method="_black_monastery"]
 [connection signal="pressed" from="Buildings/BlueMonastery" to="Buildings" method="_on_blue_monastery_pressed"]
 [connection signal="pressed" from="Buildings/NinePatchRect/Button" to="Buildings" method="_buy_button_pressed"]
+[connection signal="pressed" from="Buildings/NinePatchRect2/Button" to="Buildings" method="_on_sell_button_pressed"]

@@ -244,3 +244,9 @@ func _on_blue_monastery_pressed() -> void:
 	else:
 		mouse_click.play()
 		sell_note.show()
+
+func _on_sell_button_pressed() -> void:
+	if current_building == null:
+		return
+	current_building.sell()
+	total_coins_label.text = str(Global.total_coins_earned)
