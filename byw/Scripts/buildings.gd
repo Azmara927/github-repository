@@ -2,6 +2,7 @@ extends Node2D
 
 var current_building = null
 
+# buy_note
 @onready var price_note: NinePatchRect = $NinePatchRect
 @onready var background: Node2D = $".."
 @onready var building_name: Label = $NinePatchRect/Label
@@ -9,6 +10,12 @@ var current_building = null
 @onready var mouse_click: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 @onready var construction: AnimatedSprite2D = $Construction_effect/Construction
 @onready var total_coins_label: Label = $"../Label2"
+
+
+# sell_note
+@onready var sell_note: NinePatchRect = $NinePatchRect2
+@onready var owned_building_name: Label =$NinePatchRect2/Label
+@onready var sell_price: Label = $NinePatchRect2/Label2
 
 
 # Variables for lock button
@@ -21,6 +28,14 @@ var current_building = null
 @onready var tower: Sprite2D = $BlackTower
 @onready var house: Sprite2D = $BlackHouse
 @onready var monastery: Sprite2D = $BlackMonastery
+
+# Variables for owned buildings
+@onready var blue_archery: TextureButton = $BlueArchery
+@onready var blue_barracks: TextureButton = $BlueArchery
+@onready var blue_castle: TextureButton = $BlueCastle
+@onready var blue_tower: TextureButton = $BlueTower
+@onready var blue_house: TextureButton = $BlueHouse
+@onready var blue_monastery: TextureButton = $BlueMonastery
 
 
 # Variabes for owned buildings
@@ -134,23 +149,98 @@ func _black_monastery() -> void:
 		price_note.show()
 
 
-
-# func _buy_archery() -> void:
-#	if Global.total_coins_earned >= 2:
-#		lock_A.hide()
-#		archery.hide()
-#		print(construction)
-#		construction.position = Vector2(145,114)
-#		construction.show()
-#		construction.play("construction")
-#		construction.hide
-#		owned_archery.show()
-#		background.modulate.a = 1.0
-
-
 func _buy_button_pressed() -> void:
 	if current_building == null:
 		return
 	current_building.buy()
 	total_coins_label.text = str(Global.total_coins_earned)
 	
+
+func _on_blue_archery_pressed() -> void:
+	current_building = blue_archery
+	background.modulate.a = 0.9
+	owned_building_name.text = str("ARCHERY")
+	sell_price.text = str("x $8")
+	sell_note.position = Vector2(336,113)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()
+
+
+func _on_blue_barracks_pressed() -> void:
+	current_building = blue_barracks
+	background.modulate.a = 0.9
+	owned_building_name.text = str("BARRACKS")
+	sell_price.text = str("x $10")
+	sell_note.position = Vector2(632,329)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()
+
+
+func _on_blue_castle_pressed() -> void:
+	current_building = blue_castle
+	background.modulate.a = 0.9
+	owned_building_name.text = str("CASTLE")
+	sell_price.text = str("x $10")
+	sell_note.position = Vector2(515,378)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()
+
+
+func _on_blue_tower_pressed() -> void:
+	current_building = blue_tower
+	background.modulate.a = 0.9
+	owned_building_name.text = str("TOWER")
+	sell_price.text = str("x $6")
+	sell_note.position = Vector2(220,362)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()
+
+
+func _on_blue_house_pressed() -> void:
+	current_building = blue_house
+	background.modulate.a = 0.9
+	owned_building_name.text = str("HOUSE")
+	sell_price.text = str("x $5")
+	sell_note.position = Vector2(325,366)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()
+
+
+func _on_blue_monastery_pressed() -> void:
+	current_building = blue_monastery
+	background.modulate.a = 0.9
+	owned_building_name.text = str("MONASTERY")
+	sell_price.text = str("x $10")
+	sell_note.position = Vector2(741,70)
+	if sell_note.visible:
+		mouse_click.play()
+		sell_note.hide()
+		background.modulate.a = 1.0
+	else:
+		mouse_click.play()
+		sell_note.show()

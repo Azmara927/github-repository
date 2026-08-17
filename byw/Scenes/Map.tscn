@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dua330573to40" path="res://Assets/Button_brown.png" id="20_5aq6m"]
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="AudioStream" uid="uid://gts74qkxo53y" path="res://Assets/Sounds/mouse_click.mp3" id="21_5aq6m"]
+[ext_resource type="Script" uid="uid://di4q1hh28scsl" path="res://Scripts/sell_building.gd" id="21_ai02y"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
 [ext_resource type="Texture2D" uid="uid://yvq820vm507r" path="res://Assets/Buildings/Blue_archery.png" id="22_bnu4f"]
 [ext_resource type="Texture2D" uid="uid://0pu41nv5g7p1" path="res://Assets/Dust.png" id="22_ov5w8"]
@@ -531,12 +532,14 @@ stream = ExtResource("21_5aq6m")
 
 [node name="BlueArchery" type="TextureButton" parent="Buildings" unique_id=1191201917]
 visible = false
-offset_left = 56.0
-offset_top = -36.0
-offset_right = 248.0
-offset_bottom = 220.0
+offset_left = 71.0
+offset_top = -44.0
+offset_right = 263.0
+offset_bottom = 212.0
 scale = Vector2(1.1510415, 1.015625)
 texture_normal = ExtResource("22_bnu4f")
+stretch_mode = 4
+script = ExtResource("21_ai02y")
 
 [node name="RedArchery" type="Sprite2D" parent="Buildings" unique_id=704060253]
 visible = false
@@ -566,12 +569,15 @@ stretch_mode = 0
 
 [node name="BlueBarracks" type="TextureButton" parent="Buildings" unique_id=466992212]
 visible = false
-offset_left = 817.00006
-offset_top = 286.0
-offset_right = 1009.00006
-offset_bottom = 542.0
+offset_left = 829.0
+offset_top = 293.0
+offset_right = 1012.6522
+offset_bottom = 544.00586
 scale = Vector2(1.4374995, 1.1513674)
 texture_normal = ExtResource("26_t8u3c")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("21_ai02y")
 
 [node name="RedBarracks" type="Sprite2D" parent="Buildings" unique_id=1898568843]
 visible = false
@@ -605,6 +611,7 @@ offset_right = 762.0
 offset_bottom = 354.0
 scale = Vector2(1.0625, 1.0585939)
 texture_normal = ExtResource("28_n5cpx")
+script = ExtResource("21_ai02y")
 
 [node name="RedCastle" type="Sprite2D" parent="Buildings" unique_id=1062527356]
 visible = false
@@ -640,6 +647,7 @@ offset_right = 171.0
 offset_bottom = 519.0
 scale = Vector2(1.2421874, 1.2968748)
 texture_normal = ExtResource("31_pcp55")
+script = ExtResource("21_ai02y")
 
 [node name="RedTower" type="Sprite2D" parent="Buildings" unique_id=1735555994]
 visible = false
@@ -675,6 +683,7 @@ offset_right = 644.0
 offset_bottom = 552.0
 scale = Vector2(1.3437498, 1.1614581)
 texture_normal = ExtResource("34_g3s50")
+script = ExtResource("21_ai02y")
 
 [node name="RedHouse" type="Sprite2D" parent="Buildings" unique_id=7783600]
 visible = false
@@ -710,6 +719,7 @@ offset_right = 1115.0
 offset_bottom = 261.0
 scale = Vector2(1.1406252, 1.0757811)
 texture_normal = ExtResource("37_0j5ni")
+script = ExtResource("21_ai02y")
 
 [node name="RedMonastery" type="Sprite2D" parent="Buildings" unique_id=1289231819]
 visible = false
@@ -773,10 +783,10 @@ horizontal_alignment = 1
 
 [node name="NinePatchRect2" parent="Buildings" unique_id=1595402268 instance=ExtResource("41_n5cpx")]
 visible = false
-offset_left = 269.0
-offset_top = 86.0
-offset_right = 467.0
-offset_bottom = 293.0
+offset_left = 741.0
+offset_top = 70.0
+offset_right = 939.0
+offset_bottom = 277.0
 
 [node name="Label" type="Label" parent="Buildings/NinePatchRect2" unique_id=1465245589]
 layout_mode = 0
@@ -836,9 +846,15 @@ offset_right = 34.0
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
 [connection signal="pressed" from="Buildings/BlackArchery/TextureButton" to="Buildings" method="_black_archery"]
+[connection signal="pressed" from="Buildings/BlueArchery" to="Buildings" method="_on_blue_archery_pressed"]
 [connection signal="pressed" from="Buildings/BlackBarracks/TextureButton" to="Buildings" method="_black_barracks"]
+[connection signal="pressed" from="Buildings/BlueBarracks" to="Buildings" method="_on_blue_barracks_pressed"]
 [connection signal="pressed" from="Buildings/BlackCastle/TextureButton" to="Buildings" method="_black_castle"]
+[connection signal="pressed" from="Buildings/BlueCastle" to="Buildings" method="_on_blue_castle_pressed"]
 [connection signal="pressed" from="Buildings/BlackTower/TextureButton" to="Buildings" method="_black_tower"]
+[connection signal="pressed" from="Buildings/BlueTower" to="Buildings" method="_on_blue_tower_pressed"]
 [connection signal="pressed" from="Buildings/BlackHouse/TextureButton" to="Buildings" method="_black_house"]
+[connection signal="pressed" from="Buildings/BlueHouse" to="Buildings" method="_on_blue_house_pressed"]
 [connection signal="pressed" from="Buildings/BlackMonastery/TextureButton" to="Buildings" method="_black_monastery"]
+[connection signal="pressed" from="Buildings/BlueMonastery" to="Buildings" method="_on_blue_monastery_pressed"]
 [connection signal="pressed" from="Buildings/NinePatchRect/Button" to="Buildings" method="_buy_button_pressed"]
