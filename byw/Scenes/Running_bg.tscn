@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bkntsex8r4l2l" path="res://Scenes/coin.tscn" id="11_36vcg"]
 [ext_resource type="PackedScene" uid="uid://v3dsdp7se2b1" path="res://Scenes/enemy.tscn" id="12_06is1"]
 [ext_resource type="Script" uid="uid://bwov82mb38ax0" path="res://Scripts/follow_player.gd" id="12_cc7yl"]
+[ext_resource type="Texture2D" uid="uid://kr5wi3mp48g1" path="res://Assets/Water_splash.png" id="13_36vcg"]
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_hdewa"]
 [ext_resource type="Texture2D" uid="uid://bbbu105fagncv" path="res://Assets/Button_pause.png" id="14_ohu22"]
 [ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="17_s7583"]
@@ -106,6 +107,70 @@ sources/0 = SubResource("TileSetAtlasSource_f8755")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s7583"]
 distance = -0.99999994
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnh74"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(0, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwd3d"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(190, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7yn8"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(380, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vypc0"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(570, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qqq"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(760, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8080"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(950, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tv42"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(1140, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt87r"]
+atlas = ExtResource("13_36vcg")
+region = Rect2(1330, 0, 190, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtomv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnh74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwd3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7yn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vypc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85qqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8080")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tv42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt87r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hdewa"]
 size = Vector2(26, 770)
@@ -214,6 +279,16 @@ offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.050980393, 0.48235294, 0.5294118, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D/Water" unique_id=779458614]
+position = Vector2(131, 100)
+sprite_frames = SubResource("SpriteFrames_qtomv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Parallax2D/Water" unique_id=1975686803]
+position = Vector2(722, 97)
+sprite_frames = SubResource("SpriteFrames_qtomv")
+autoplay = "default"
 
 [node name="Clouds01" type="Sprite2D" parent="Parallax2D" unique_id=1367940958]
 position = Vector2(154, 169)

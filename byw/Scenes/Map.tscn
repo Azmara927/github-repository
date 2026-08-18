@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://cpva47uy27sic" path="res://Assets/Buildings/Red_monastery.png" id="38_2gi4k"]
 [ext_resource type="PackedScene" uid="uid://yquo6tvcj8l8" path="res://Scenes/building_sell.tscn" id="41_n5cpx"]
 [ext_resource type="Texture2D" uid="uid://dh0uqjtydr5dd" path="res://Assets/Button_red.png" id="42_ai02y"]
+[ext_resource type="Texture2D" uid="uid://kr5wi3mp48g1" path="res://Assets/Water_splash.png" id="46_pcp55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qumfl"]
 texture = ExtResource("1_7yn8b")
@@ -370,6 +371,70 @@ font_size = 20
 font_color = Color(0.26666668, 0.19607843, 0.12156863, 1)
 outline_size = 2
 outline_color = Color(0.27058825, 0.19607843, 0.13725491, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr4qj"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(0, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5akl"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(190, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3mid"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(380, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5mar"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(570, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6pei"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(760, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkbmt"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(950, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hvk1"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(1140, 0, 190, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to2f7"]
+atlas = ExtResource("46_pcp55")
+region = Rect2(1330, 0, 190, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_348ac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr4qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5akl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3mid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5mar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6pei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkbmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hvk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to2f7")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=866389142]
 script = ExtResource("1_5t7yc")
@@ -882,6 +947,30 @@ visible = false
 visible = false
 offset_left = 34.0
 offset_right = 34.0
+
+[node name="Water" type="AnimatedSprite2D" parent="." unique_id=518232000]
+position = Vector2(403, 132)
+sprite_frames = SubResource("SpriteFrames_348ac")
+animation = &"water"
+autoplay = "water"
+
+[node name="Water2" type="AnimatedSprite2D" parent="." unique_id=854258528]
+position = Vector2(223, 323)
+sprite_frames = SubResource("SpriteFrames_348ac")
+animation = &"water"
+autoplay = "water"
+
+[node name="Water3" type="AnimatedSprite2D" parent="." unique_id=1129252733]
+position = Vector2(779, 129)
+sprite_frames = SubResource("SpriteFrames_348ac")
+animation = &"water"
+autoplay = "water"
+
+[node name="Water4" type="AnimatedSprite2D" parent="." unique_id=2129366878]
+position = Vector2(851, 338)
+sprite_frames = SubResource("SpriteFrames_348ac")
+animation = &"water"
+autoplay = "water"
 
 [connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]

@@ -97,7 +97,7 @@ position = Vector2(181, 244)
 position = Vector2(428, 47)
 
 [node name="Area2D4" parent="." unique_id=929950247 instance=ExtResource("2_wr5rd")]
-position = Vector2(625, 247)
+position = Vector2(764, 247)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1583305140]
 position = Vector2(4, 132)
