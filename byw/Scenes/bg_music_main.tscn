@@ -6,4 +6,5 @@
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1470833484]
 stream = ExtResource("1_2xkeb")
+autoplay = true
 parameters/looping = true
