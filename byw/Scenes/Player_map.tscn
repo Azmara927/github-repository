@@ -2,16 +2,136 @@
 
 [ext_resource type="Script" uid="uid://cjftja2eh6tad" path="res://Scripts/player_map.gd" id="1_bxef4"]
 [ext_resource type="Texture2D" uid="uid://bjoex6ykxvyl4" path="res://Assets/Pawn_Idle_1.png" id="1_khrac"]
+[ext_resource type="Texture2D" uid="uid://c5cbpiuom6d2r" path="res://Assets/Pawn_Idle.png" id="1_ltkmh"]
+[ext_resource type="Texture2D" uid="uid://bo2j3heypft0m" path="res://Assets/Pawn_Run.png" id="3_fen41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jped3"]
 size = Vector2(22, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fen41"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwlor"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp1jp"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5pv7"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykrsi"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jcfc"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctmtm"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl47m"]
+atlas = ExtResource("1_ltkmh")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk2f8"]
+atlas = ExtResource("3_fen41")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg12j"]
+atlas = ExtResource("3_fen41")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn4pv"]
+atlas = ExtResource("3_fen41")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwjqq"]
+atlas = ExtResource("3_fen41")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17s8a"]
+atlas = ExtResource("3_fen41")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss7j5"]
+atlas = ExtResource("3_fen41")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sk2f8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fen41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwlor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp1jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5pv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykrsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jcfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctmtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl47m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk2f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg12j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn4pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17s8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss7j5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Player_map" type="CharacterBody2D" unique_id=712387098]
 script = ExtResource("1_bxef4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815610520]
+visible = false
 texture = ExtResource("1_khrac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985412663]
 position = Vector2(4, 23)
 shape = SubResource("RectangleShape2D_jped3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110996324]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_sk2f8")
+animation = &"idle"
+autoplay = "idle"

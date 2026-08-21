@@ -13,15 +13,14 @@ var tower_owned: bool = false
 var house_owned: bool = false
 var monastery_owned: bool = false
 
-@onready var archery: Sprite2D = $Buildings/BlackArchery
+var buildings = {
+	
+}
 
 
 
 # @export var coins_run = Label
 # @export var hearts = HBoxContainer
-
-
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

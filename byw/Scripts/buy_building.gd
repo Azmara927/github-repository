@@ -21,6 +21,8 @@ func buy():
 		old_building.hide()
 		price_note.hide()
 		Global.total_buildings += 1
+		Global.buildings[self] = true
+		print(Global.buildings)
 		print(Global.total_buildings)
 		Global.total_coins_earned = Global.total_coins_earned - price
 		print(Global.total_coins_earned)

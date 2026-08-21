@@ -64,7 +64,7 @@ scale = Vector2(2.6510417, 2.6510417)
 texture = ExtResource("2_rmv3b")
 
 [node name="Divider" type="Sprite2D" parent="." unique_id=1466669140]
-position = Vector2(606.25, 335)
+position = Vector2(606.25, 332)
 scale = Vector2(0.9, 0.95334685)
 texture = ExtResource("3_kj6bu")
 

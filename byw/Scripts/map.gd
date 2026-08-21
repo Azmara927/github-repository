@@ -12,6 +12,7 @@ extends Node2D
 @onready var price: NinePatchRect = $Buildings/NinePatchRect
 @onready var mouse_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@export var buildings: Array[Sprite2D]
 
 # Called when the node enters the scene tree for the first time. (HEARTS)
 #Display of the hearts or lives the player has
@@ -39,6 +40,11 @@ func _ready() -> void:
 		Heart1.modulate.a = 0.5
 #total coins eanred not showing in the map
 	total_coins.text = str(Global.coins_this_run)
+	
+	if Global.buildings == {}:
+		for building in buildings:
+			Global.buildings[building] = false
+	print(Global.buildings)
 
 		
 # Total coins collected displayed in map
