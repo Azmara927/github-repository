@@ -36,3 +36,4 @@ func buy():
 		construction.hide()
 		owned_building.show()
 		background.modulate.a = 1.0
+		Global.save_score()

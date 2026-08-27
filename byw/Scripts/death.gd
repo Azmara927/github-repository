@@ -46,6 +46,7 @@ func _revive() -> void:
 
 #Map button: when clicked changes to Map scene
 func _map() -> void:
+	Global.save_score()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Map.tscn")
 	
 

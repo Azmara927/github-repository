@@ -44,6 +44,12 @@ func _ready() -> void:
 	if Global.buildings == {}:
 		for building in buildings:
 			Global.buildings[building] = false
+		Global.save_score()
+	else:
+		var iteration: int = 0
+		for building in Global.buildings:
+			if Global.buildings[building]:
+				print(buildings[iteration])
 	print(Global.buildings)
 
 		
