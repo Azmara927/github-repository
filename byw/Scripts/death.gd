@@ -1,7 +1,7 @@
 extends Control
 
 var hover_cursor = preload ("res://Assets/Cursor_03.png")
-
+var XP = Global.XP_this_run
 
 
 @onready var running_script = "res://Scripts/running.gd"
@@ -18,6 +18,14 @@ var hover_cursor = preload ("res://Assets/Cursor_03.png")
 func _ready() -> void:
 	coins_collected.text = str(Global.coins_this_run)
 	current_XP.text = str(Global.XP_this_run)
+#	if XP > Global.high_score:
+#		Global.high_score = XP
+	highestXP.text = str(Global.high_score)
+	
+# Trying to do high score
+#	if Global.XP_this_run > Global.high_score:
+#		Global.high_score = Global.XP_this_run
+#		highestXP.tet = str(Global.XP_this_run)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,8 +48,6 @@ func _revive() -> void:
 func _map() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Map.tscn")
 	
-	
-
 
 #add the mouse hovering part
 #func _mouse_entered() -> void:
