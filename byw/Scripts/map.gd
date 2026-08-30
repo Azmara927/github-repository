@@ -1,5 +1,7 @@
 extends Node2D
 
+var revive_time = Time.get_unix_time_from_system() + 5
+
 @onready var Heart5: TextureRect = $HBoxContainer/TextureRect5
 @onready var Heart4: TextureRect = $HBoxContainer/TextureRect4
 @onready var Heart3: TextureRect = $HBoxContainer/TextureRect3
@@ -38,7 +40,10 @@ func _ready() -> void:
 		Heart3.modulate.a = 0.5
 		Heart2.modulate.a = 0.5
 		Heart1.modulate.a = 0.5
-#total coins eanred not showing in the map
+		
+		Global.player_data["heart_timers"].append(revive_time)
+
+# total coins eanred not showing in the map
 	total_coins.text = str(Global.coins_this_run)
 	
 	if Global.buildings == {}:

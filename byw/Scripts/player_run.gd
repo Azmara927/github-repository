@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -550.0
 
 var coins: int = 0
 var lives: int = 5
+var revive_time = Time.get_unix_time_from_system() + 5
 
 @onready var XP = $"../../../XP"
 @onready var PickUpSound: AudioStreamPlayer2D = $PickUpSound
