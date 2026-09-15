@@ -12,9 +12,9 @@ func _process(delta: float) -> void:
 	direction.y = Input.get_axis("ui_up", "ui_down")
 	if direction: 
 		animation.play("run")
-		if direction.x > 0:
+		if direction.x < 0:
 			animation.flip_h = true
-		elif direction.x < 0:
+		elif direction.x > 0:
 			animation.flip_h = false
 	else:
 		animation.play("idle")

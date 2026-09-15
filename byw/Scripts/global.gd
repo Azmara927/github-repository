@@ -52,11 +52,12 @@ func load_score():
 
 func check_heart_revival():
 	var current_time = Time.get_unix_time_from_system()
-	for revive_time in player_data["heart_timers"].duplicate():
-		if current_time >= revive_time:
-			if lives < 5:
-				lives += 1
-			player_data["heart_timers"].erase(revive_time)
+#	for revive_time in player_data["heart_timers"].duplicate():
+	if current_time >= revive_time:
+		if lives < 5:
+			lives += 1
+			print(lives)
+		player_data["heart_timers"].erase(revive_time)
 #		save_game()
 
 

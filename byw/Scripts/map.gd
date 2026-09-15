@@ -1,6 +1,6 @@
 extends Node2D
 
-var revive_time = Time.get_unix_time_from_system() + 5
+var revive_time: float = Time.get_unix_time_from_system() + 5
 
 @onready var Heart5: TextureRect = $HBoxContainer/TextureRect5
 @onready var Heart4: TextureRect = $HBoxContainer/TextureRect4
@@ -13,6 +13,7 @@ var revive_time = Time.get_unix_time_from_system() + 5
 @onready var save: Control = $Save_option
 @onready var price: NinePatchRect = $Buildings/NinePatchRect
 @onready var mouse_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var heart_timer: Timer = $"Heart _timer"
 
 @export var buildings: Array[Sprite2D]
 
@@ -84,3 +85,36 @@ func _settings_pressed() -> void:
 func _run_pressed() -> void:
 	mouse_click.play()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
+
+
+func _heart_revival() -> void:
+	print(Global.lives)
+	if Global.lives == 4:
+#		if revive_time
+		Heart5.modulate.a = 0.5
+	if Global.lives == 3:
+		Heart5.modulate.a = 0.5
+		Heart4.modulate.a = 0.5
+	if Global.lives == 2:
+		Heart5.modulate.a = 0.5
+		Heart4.modulate.a = 0.5
+		Heart3.modulate.a = 0.5
+	if Global.lives == 1:
+		Heart5.modulate.a = 0.5
+		Heart4.modulate.a = 0.5
+		Heart3.modulate.a = 0.5
+		Heart2.modulate.a = 0.5
+	if Global.lives == 0:
+		Heart5.modulate.a = 0.5
+		Heart4.modulate.a = 0.5
+		Heart3.modulate.a = 0.5
+		Heart2.modulate.a = 0.5
+		Heart1.modulate.a = 0.5
+
+
+func _on_heart_timer_timeout() -> void:
+	if Global.lives == 4:
+		Global.lives += 1
+		print(Global.lives)
+#		if revive_time
+		Heart5.modulate.a = 1
