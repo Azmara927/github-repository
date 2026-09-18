@@ -817,11 +817,6 @@ offset_bottom = 68.0
 text = "0"
 label_settings = SubResource("LabelSettings_uylqo")
 
-[node name="Heart_timer" type="Timer" parent="." unique_id=1434640243]
-wait_time = 10.0
-autostart = true
-ignore_time_scale = true
-
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1577280153]
 offset_left = 413.0
 offset_top = 15.0
@@ -853,6 +848,9 @@ texture = ExtResource("12_q4yjo")
 custom_minimum_size = Vector2(60, 54)
 layout_mode = 2
 texture = ExtResource("12_q4yjo")
+
+[node name="HeartTimer" type="Timer" parent="HBoxContainer" unique_id=90095482]
+autostart = true
 
 [node name="Buildings" type="Node2D" parent="." unique_id=649981577]
 script = ExtResource("16_nitb1")
@@ -1280,7 +1278,7 @@ autoplay = "default"
 [connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]
-[connection signal="timeout" from="Heart_timer" to="." method="_on_heart_timer_timeout"]
+[connection signal="timeout" from="HBoxContainer/HeartTimer" to="." method="_on_heart_timer_timeout"]
 [connection signal="pressed" from="Buildings/BlackArchery/TextureButton" to="Buildings" method="_black_archery"]
 [connection signal="pressed" from="Buildings/BlueArchery" to="Buildings" method="_on_blue_archery_pressed"]
 [connection signal="pressed" from="Buildings/BlackBarracks/TextureButton" to="Buildings" method="_black_barracks"]

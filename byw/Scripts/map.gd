@@ -20,30 +20,32 @@ var revive_time: float = Time.get_unix_time_from_system() + 5
 # Called when the node enters the scene tree for the first time. (HEARTS)
 #Display of the hearts or lives the player has
 func _ready() -> void:
-	print(Global.lives)
-	if Global.lives == 4:
-		Heart5.modulate.a = 0.5
-	if Global.lives == 3:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-	if Global.lives == 2:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-	if Global.lives == 1:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-		Heart2.modulate.a = 0.5
-	if Global.lives == 0:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-		Heart2.modulate.a = 0.5
-		Heart1.modulate.a = 0.5
+	#print(Global.lives)
+	#if Global.lives == 4:
+		#Heart5.modulate.a = 0.5
+	#if Global.lives == 3:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+	#if Global.lives == 2:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+	#if Global.lives == 1:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+		#Heart2.modulate.a = 0.5
+	#if Global.lives == 0:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+		#Heart2.modulate.a = 0.5
+		#Heart1.modulate.a = 0.5
 		
-		Global.player_data["heart_timers"].append(revive_time)
-
+		#Global.player_data["heart_timers"].append(revive_time)
+		
+	update_hearts()
+#
 # total coins eanred not showing in the map
 	total_coins.text = str(Global.coins_this_run)
 	
@@ -87,34 +89,42 @@ func _run_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
 
 
-func _heart_revival() -> void:
-	print(Global.lives)
-	if Global.lives == 4:
-#		if revive_time
-		Heart5.modulate.a = 0.5
-	if Global.lives == 3:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-	if Global.lives == 2:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-	if Global.lives == 1:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-		Heart2.modulate.a = 0.5
-	if Global.lives == 0:
-		Heart5.modulate.a = 0.5
-		Heart4.modulate.a = 0.5
-		Heart3.modulate.a = 0.5
-		Heart2.modulate.a = 0.5
-		Heart1.modulate.a = 0.5
+func update_hearts():
+	var hearts = [Heart1, Heart2, Heart3, Heart4, Heart5]
+	for i in range(5):
+		if i < Global.player_data["lives"]:
+			hearts[i].modulate.a = 1.0
+		else:
+			hearts[i].modulate.a = 0.5
+
+
+
+
+#func _heart_revival() -> void:
+	#print(Global.lives)
+	#if Global.lives == 4:
+##		if revive_time
+		#Heart5.modulate.a = 0.5
+	#if Global.lives == 3:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+	#if Global.lives == 2:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+	#if Global.lives == 1:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+		#Heart2.modulate.a = 0.5
+	#if Global.lives == 0:
+		#Heart5.modulate.a = 0.5
+		#Heart4.modulate.a = 0.5
+		#Heart3.modulate.a = 0.5
+		#Heart2.modulate.a = 0.5
+		#Heart1.modulate.a = 0.5
 
 
 func _on_heart_timer_timeout() -> void:
-	if Global.lives == 4:
-		Global.lives += 1
-		print(Global.lives)
-#		if revive_time
-		Heart5.modulate.a = 1
+	Global.check_heart_revival()
+	update_hearts()

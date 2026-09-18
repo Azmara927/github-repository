@@ -2,8 +2,8 @@ extends Node
 
 const SAVEFILE = "user://savefile.save"
 
-var lives: int = 5
-var revive_time = Time.get_unix_time_from_system() + 5
+#var lives: int = 5
+#var revive_time = Time.get_unix_time_from_system() + 90
 var coins_this_run: int = 0
 var total_coins_earned: int = 0
 var XP_this_run: int = 0
@@ -22,7 +22,7 @@ var buildings = {
 
 
 var player_data = {
-	lives: 5,
+	"lives": 5,
 	"heart_timers": []
 }
 
@@ -32,7 +32,7 @@ var player_data = {
 
 func _ready() -> void:
 	load_score()
-	check_heart_revival()
+	#check_heart_revival()
 	print(high_score)
 
 
@@ -50,15 +50,22 @@ func load_score():
 		buildings = file_load.get_var()
 
 
+func lose_heart():
+	if player_data["lives"] > 0:
+		player_data["lives"]-= 1
+		
+		var revive_time = Time.get_unix_time_from_system() + 60
+		player_data["heart_timers"].append(revive_time)
+
+
 func check_heart_revival():
 	var current_time = Time.get_unix_time_from_system()
-#	for revive_time in player_data["heart_timers"].duplicate():
-	if current_time >= revive_time:
-		if lives < 5:
-			lives += 1
-			print(lives)
-		player_data["heart_timers"].erase(revive_time)
-#		save_game()
+	
+	for revive_time in player_data["heart_timers"].duplicate():
+		if current_time >= revive_time:
+			player_data["lives"] += 1
+			player_data["heart_timers"].erase(revive_time)
+##		save_game()
 
 
 
