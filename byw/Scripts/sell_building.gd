@@ -9,6 +9,8 @@ extends TextureButton
 @onready var sell_note: NinePatchRect = $"../NinePatchRect2"
 @onready var background: Node2D = $"../.."
 
+
+# Sell function: what happens when clicked sell button
 func sell():
 		owned_building.hide()
 		sell_note.hide()

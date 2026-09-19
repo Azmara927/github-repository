@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	pass
 
 
+# Spawns land when player enters 
 func _player_reached(body: Node2D) -> void:
 	ground_manager.spawn_land()
 

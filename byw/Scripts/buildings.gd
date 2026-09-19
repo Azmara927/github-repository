@@ -2,7 +2,7 @@ extends Node2D
 
 var current_building = null
 
-# buy_note
+# buy note
 @onready var price_note: NinePatchRect = $NinePatchRect
 @onready var background: Node2D = $".."
 @onready var building_name: Label = $NinePatchRect/Label
@@ -12,7 +12,7 @@ var current_building = null
 @onready var total_coins_label: Label = $"../Label2"
 
 
-# sell_note
+# sell note
 @onready var sell_note: NinePatchRect = $NinePatchRect2
 @onready var owned_building_name: Label =$NinePatchRect2/Label
 @onready var sell_price: Label = $NinePatchRect2/Label2
@@ -70,7 +70,8 @@ func _black_archery() -> void:
 	else:
 		mouse_click.play()
 		price_note.show()
-		
+
+
 # The code for the functionality of the barracks (building)
 func _black_barracks() -> void:
 	current_building = barracks
@@ -85,7 +86,8 @@ func _black_barracks() -> void:
 	else:
 		mouse_click.play()
 		price_note.show()
-		
+
+
 # The code for the functionality of the castle (building)
 func _black_castle() -> void:
 	current_building = castle
@@ -101,6 +103,7 @@ func _black_castle() -> void:
 		mouse_click.play()
 		price_note.show()
 
+
 # The code for the functionality of the tower (building)
 func _black_tower() -> void:
 	current_building = tower
@@ -115,7 +118,7 @@ func _black_tower() -> void:
 	else:
 		mouse_click.play()
 		price_note.show()
-		
+
 
 # The code for the functionality of the house (building)
 func _black_house() -> void:
@@ -154,7 +157,7 @@ func _buy_button_pressed() -> void:
 		return
 	current_building.buy()
 	total_coins_label.text = str(Global.total_coins_earned)
-	
+
 
 func _on_blue_archery_pressed() -> void:
 	current_building = blue_archery
@@ -244,6 +247,7 @@ func _on_blue_monastery_pressed() -> void:
 	else:
 		mouse_click.play()
 		sell_note.show()
+
 
 func _on_sell_button_pressed() -> void:
 	if current_building == null:

@@ -18,37 +18,10 @@ var revive_time: float = Time.get_unix_time_from_system() + 5
 @export var buildings: Array[Sprite2D]
 
 # Called when the node enters the scene tree for the first time. (HEARTS)
-#Display of the hearts or lives the player has
 func _ready() -> void:
-	#print(Global.lives)
-	#if Global.lives == 4:
-		#Heart5.modulate.a = 0.5
-	#if Global.lives == 3:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-	#if Global.lives == 2:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-	#if Global.lives == 1:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-		#Heart2.modulate.a = 0.5
-	#if Global.lives == 0:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-		#Heart2.modulate.a = 0.5
-		#Heart1.modulate.a = 0.5
-		
-		#Global.player_data["heart_timers"].append(revive_time)
-		
 	update_hearts()
-#
-# total coins eanred not showing in the map
-	total_coins.text = str(Global.coins_this_run)
-	
+
+# buildings commenting??
 	if Global.buildings == {}:
 		for building in buildings:
 			Global.buildings[building] = false
@@ -60,7 +33,7 @@ func _ready() -> void:
 				print(buildings[iteration])
 	print(Global.buildings)
 
-		
+
 # Total coins collected displayed in map
 	Global.total_coins_earned = Global.total_coins_earned + Global.coins_this_run
 	total_coins.text = str(Global.total_coins_earned)
@@ -71,24 +44,25 @@ func _process(delta: float) -> void:
 	pass
 
 
-#Save button
+# Save button
 func _save() -> void:
 	mouse_click.play()
 	save.show()
 
 
-#Settings button: contains instructions, music/sound adjustment and gameplay instructions
+# Settings button: contains instructions, music/sound adjustment and gameplay instructions
 func _settings_pressed() -> void:
 	mouse_click.play()
 	help.show()
 
 
-#Run button: changes to running scene when clicked
+# Run button: changes to running scene when clicked
 func _run_pressed() -> void:
 	mouse_click.play()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
 
 
+# Display of the hearts or lives the player has
 func update_hearts():
 	var hearts = [Heart1, Heart2, Heart3, Heart4, Heart5]
 	for i in range(5):
@@ -98,33 +72,7 @@ func update_hearts():
 			hearts[i].modulate.a = 0.5
 
 
-
-
-#func _heart_revival() -> void:
-	#print(Global.lives)
-	#if Global.lives == 4:
-##		if revive_time
-		#Heart5.modulate.a = 0.5
-	#if Global.lives == 3:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-	#if Global.lives == 2:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-	#if Global.lives == 1:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-		#Heart2.modulate.a = 0.5
-	#if Global.lives == 0:
-		#Heart5.modulate.a = 0.5
-		#Heart4.modulate.a = 0.5
-		#Heart3.modulate.a = 0.5
-		#Heart2.modulate.a = 0.5
-		#Heart1.modulate.a = 0.5
-
-
+# Checks if the heart revival time is up and adjusts the remaining lives of the player accordingly
 func _on_heart_timer_timeout() -> void:
 	Global.check_heart_revival()
 	update_hearts()

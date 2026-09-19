@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var XP: int = 0
 
 @onready var XP_label = $CanvasLayer/XP
@@ -18,9 +17,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-#func _pause() -> void:
-#	get_tree().call_deferred("change_scene_to_file", "res://scenes/pause.tscn")
-
 # XP coding
 func _XP() -> void:
 	XP += 1 * 17
@@ -29,7 +25,6 @@ func _XP() -> void:
 	Global.XP_this_run = XP
 	if XP > Global.high_score:
 		Global.high_score = XP
-	
 
 
 # Pause button: Pauses gameplay and shows pause menu
@@ -37,4 +32,3 @@ func _pause() -> void:
 	var pause_menu = preload("res://Scenes/pause.tscn").instantiate()
 	add_child(pause_menu)
 	get_tree().paused = true
-	pass # Replace with function body.
