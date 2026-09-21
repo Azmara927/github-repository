@@ -59,7 +59,10 @@ func _settings_pressed() -> void:
 # Run button: changes to running scene when clicked
 func _run_pressed() -> void:
 	mouse_click.play()
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
+	if Global.player_data["lives"] > 0:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
+	else:
+		run_button.disabled = true
 
 
 # Display of the hearts or lives the player has
