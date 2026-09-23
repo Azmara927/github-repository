@@ -21,6 +21,7 @@
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_hdewa"]
 [ext_resource type="Texture2D" uid="uid://bbbu105fagncv" path="res://Assets/Button_pause.png" id="14_ohu22"]
 [ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="17_s7583"]
+[ext_resource type="Script" uid="uid://btkv2lwxmdyec" path="res://Scenes/running_scene_moving.gd" id="19_mnh74"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ac3f"]
 texture = ExtResource("2_mds7c")
@@ -326,6 +327,7 @@ position = Vector2(108, -45)
 shape = SubResource("RectangleShape2D_hdewa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1170644118]
+script = ExtResource("19_mnh74")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1762096136]
 offset_left = 40.0
@@ -371,4 +373,4 @@ label_settings = SubResource("LabelSettings_0lgt3")
 
 [connection signal="timeout" from="Timer" to="." method="_XP"]
 [connection signal="body_entered" from="Area2D" to="Background" method="_start_land_spawn"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_pause"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_pause_button_pressed"]

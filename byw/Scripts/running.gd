@@ -25,10 +25,3 @@ func _XP() -> void:
 	Global.XP_this_run = XP
 	if XP > Global.high_score:
 		Global.high_score = XP
-
-
-# Pause button: Pauses gameplay and shows pause menu
-func _pause() -> void:
-	var pause_menu = preload("res://Scenes/pause.tscn").instantiate()
-	add_child(pause_menu)
-	get_tree().paused = true

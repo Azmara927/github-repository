@@ -14,7 +14,7 @@ extends Node
 @onready var background: Node2D = $"../.."
 
 
-# The buy function; what happens when the player buys the building
+# The buy function; when the player buys the building, the lock disappears, the black building is hidden
 func buy():
 	if Global.total_coins_earned >= price:
 		lock.hide()

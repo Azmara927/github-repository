@@ -23,12 +23,11 @@ func _physics_process(delta) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY		
+		velocity.y = JUMP_VELOCITY
 	if Input.is_action_pressed("ui_down"):
 		position.y += 1
 		
 	move_and_slide()
-		
 
 
 # Player interaction
@@ -42,7 +41,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 # Colliding with enemy
 	if area.is_in_group("damager"):
 		Global.lose_heart()
-		Global.player_data["heart_timers"].append(revive_time)
 #		Global.save_game()
 		print(Global.player_data["lives"])
 # Plays death screen

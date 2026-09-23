@@ -31,7 +31,7 @@ var player_data = {
 
 func _ready() -> void:
 	load_score()
-	#check_heart_revival()
+	check_heart_revival()
 	print(high_score)
 
 
@@ -40,6 +40,7 @@ func save_score():
 	var file_save = FileAccess.open(SAVEFILE, FileAccess.WRITE)
 	file_save.store_32(high_score)
 	file_save.store_var(buildings)
+	file_save.store_var(player_data["lives"])
 	print("oop")
 	
 
@@ -49,6 +50,7 @@ func load_score():
 	if FileAccess.file_exists(SAVEFILE):
 		high_score = file_load.get_32()
 		buildings = file_load.get_var()
+		player_data["lives"]
 
 
 # What happens when the player loses a heart
@@ -57,15 +59,20 @@ func lose_heart():
 		player_data["lives"]-= 1
 		
 		var revive_time = Time.get_unix_time_from_system() + 60
+		print(Time.get_unix_time_from_system())
+		print(revive_time)
 		player_data["heart_timers"].append(revive_time)
+		print(player_data["heart_timers"])
 
 
 # Checks if the time taken to revive a heart is completed and increases player's lives if time is completed
 func check_heart_revival():
 	var current_time = Time.get_unix_time_from_system()
-	
+	print(player_data["heart_timers"])
 	for revive_time in player_data["heart_timers"].duplicate():
 		if current_time >= revive_time:
+			print(current_time)
+			print(revive_time)
 			player_data["lives"] += 1
 			player_data["heart_timers"].erase(revive_time)
 		save_score()
