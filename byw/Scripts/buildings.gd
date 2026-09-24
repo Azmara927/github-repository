@@ -7,7 +7,7 @@ var current_building = null
 @onready var background: Node2D = $".."
 @onready var building_name: Label = $NinePatchRect/Label
 @onready var price: Label = $NinePatchRect/Label2
-@onready var mouse_click: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
+@onready var mouse_click: AudioStreamPlayer2D = $"../../AudioStreamPlayer2D"
 @onready var construction: AnimatedSprite2D = $Construction_effect/Construction
 @onready var total_coins_label: Label = $"../Label2"
 

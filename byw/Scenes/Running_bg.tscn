@@ -21,7 +21,7 @@
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="14_hdewa"]
 [ext_resource type="Texture2D" uid="uid://bbbu105fagncv" path="res://Assets/Button_pause.png" id="14_ohu22"]
 [ext_resource type="Texture2D" uid="uid://chn1uinm7ilyu" path="res://Assets/Icon_settings.png" id="17_s7583"]
-[ext_resource type="Script" uid="uid://btkv2lwxmdyec" path="res://Scenes/running_scene_moving.gd" id="19_mnh74"]
+[ext_resource type="Script" uid="uid://btkv2lwxmdyec" path="res://Scripts/running_scene_moving.gd" id="19_mnh74"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ac3f"]
 texture = ExtResource("2_mds7c")

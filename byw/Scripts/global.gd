@@ -1,12 +1,13 @@
 extends Node
 
 const SAVEFILE = "user://savefile.save"
-
+const PLAYERFILE = "user://playfile.save"
 
 var coins_this_run: int = 0
 var total_coins_earned: int = 0
 var XP_this_run: int = 0
 var high_score: int = 5
+var add_time: int = 60
 var total_buildings: int = 0
 var archery_owned: bool = false
 var baracks_owned: bool = false
@@ -32,6 +33,7 @@ var player_data = {
 func _ready() -> void:
 	load_score()
 	check_heart_revival()
+	load_player_data()
 	print(high_score)
 
 
@@ -40,7 +42,6 @@ func save_score():
 	var file_save = FileAccess.open(SAVEFILE, FileAccess.WRITE)
 	file_save.store_32(high_score)
 	file_save.store_var(buildings)
-	file_save.store_var(player_data["lives"])
 	print("oop")
 	
 
@@ -50,7 +51,21 @@ func load_score():
 	if FileAccess.file_exists(SAVEFILE):
 		high_score = file_load.get_32()
 		buildings = file_load.get_var()
-		player_data["lives"]
+
+
+# Saves the player's hearts
+func save_player_data():
+	var file_save = FileAccess.open(PLAYERFILE, FileAccess.WRITE)
+	file_save.store_32(player_data["lives"])
+	file_save.store_var(player_data["heart_timers"])
+
+
+# Loads the player's hearts
+func load_player_data():
+	var file_load = FileAccess.open(PLAYERFILE, FileAccess.READ)
+	if FileAccess.file_exists(PLAYERFILE):
+		player_data["lives"] = file_load.get_32()
+		player_data["heart_timers"] = file_load.get_var()
 
 
 # What happens when the player loses a heart
@@ -58,11 +73,10 @@ func lose_heart():
 	if player_data["lives"] > 0:
 		player_data["lives"]-= 1
 		
-		var revive_time = Time.get_unix_time_from_system() + 60
+		var revive_time = Time.get_unix_time_from_system() + add_time
 		print(Time.get_unix_time_from_system())
 		print(revive_time)
 		player_data["heart_timers"].append(revive_time)
-		print(player_data["heart_timers"])
 
 
 # Checks if the time taken to revive a heart is completed and increases player's lives if time is completed

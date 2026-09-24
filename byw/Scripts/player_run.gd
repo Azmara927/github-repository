@@ -41,7 +41,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 # Colliding with enemy
 	if area.is_in_group("damager"):
 		Global.lose_heart()
-#		Global.save_game()
-		print(Global.player_data["lives"])
+		Global.save_score
 # Plays death screen
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/death.tscn")

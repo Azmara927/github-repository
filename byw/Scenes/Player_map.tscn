@@ -120,6 +120,7 @@ animations = [{
 }]
 
 [node name="Player_map" type="CharacterBody2D" unique_id=712387098]
+y_sort_enabled = true
 script = ExtResource("1_bxef4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815610520]

@@ -8,6 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings.tscn" id="6_5xwk1"]
 [ext_resource type="AudioStream" uid="uid://gts74qkxo53y" path="res://Assets/Sounds/mouse_click.mp3" id="7_01fal"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01fal"]
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg74p"]
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkst"]
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
 [node name="Control" type="Control" unique_id=890563695]
 layout_mode = 3
 anchors_preset = 15
@@ -34,6 +52,7 @@ offset_left = 77.0
 offset_top = 330.0
 offset_right = 256.0
 offset_bottom = 488.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_01fal")
 action_mode = 0
 icon = ExtResource("3_oyf75")
 flat = true
@@ -45,6 +64,7 @@ offset_left = 239.0
 offset_top = 330.0
 offset_right = 404.0
 offset_bottom = 481.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_wg74p")
 action_mode = 0
 icon = ExtResource("4_a51mf")
 flat = true
@@ -56,6 +76,7 @@ offset_left = 154.0
 offset_top = 459.0
 offset_right = 318.0
 offset_bottom = 624.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_rlkst")
 icon = ExtResource("5_5xwk1")
 flat = true
 expand_icon = true
