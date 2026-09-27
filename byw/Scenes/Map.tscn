@@ -36,8 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://d0w2w5plj1mj0" path="res://Assets/Buildings/Blue_tower.png" id="31_pcp55"]
 [ext_resource type="Texture2D" uid="uid://bs2r4sdk35h0a" path="res://Assets/Buildings/Blue_house.png" id="34_g3s50"]
 [ext_resource type="Texture2D" uid="uid://dhoarl34mum3n" path="res://Assets/Buildings/Blue_monastery.png" id="37_0j5ni"]
-[ext_resource type="PackedScene" uid="uid://yquo6tvcj8l8" path="res://Scenes/building_sell.tscn" id="41_n5cpx"]
-[ext_resource type="Texture2D" uid="uid://dh0uqjtydr5dd" path="res://Assets/Button_red.png" id="42_ai02y"]
 [ext_resource type="Texture2D" uid="uid://kr5wi3mp48g1" path="res://Assets/Water_splash.png" id="46_pcp55"]
 [ext_resource type="Texture2D" uid="uid://7w4pkpdpuslv" path="res://Assets/Sheep_Idle.png" id="47_g3s50"]
 [ext_resource type="Texture2D" uid="uid://b3fs5mykym3w1" path="res://Assets/Sheep_Grass.png" id="48_j7f23"]
@@ -613,25 +611,6 @@ font_color = Color(0.2681446, 0.19683188, 0.122279085, 1)
 outline_size = 2
 outline_color = Color(0.27012202, 0.19435984, 0.137108, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_pcp55"]
-font = ExtResource("19_8cvfu")
-font_size = 24
-font_color = Color(0.29411766, 0.34901962, 0.3529412, 1)
-outline_size = 2
-outline_color = Color(0.13333334, 0.11764706, 0.12156863, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_11b8l"]
-font = ExtResource("14_6hulr")
-font_size = 18
-font_color = Color(0.13966715, 0.045846507, 0.015907736, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_g3s50"]
-font = ExtResource("14_6hulr")
-font_size = 20
-font_color = Color(0.26666668, 0.19607843, 0.12156863, 1)
-outline_size = 2
-outline_color = Color(0.27058825, 0.19607843, 0.13725491, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j5ni"]
 expand_margin_left = 15.0
 expand_margin_top = 15.0
@@ -1057,53 +1036,6 @@ text = " x $100"
 label_settings = SubResource("LabelSettings_kqqo1")
 horizontal_alignment = 1
 
-[node name="NinePatchRect2" parent="EnvironmentalObjects/Buildings" unique_id=1595402268 instance=ExtResource("41_n5cpx")]
-visible = false
-z_index = 1
-offset_left = 741.0
-offset_top = 70.0
-offset_right = 939.0
-offset_bottom = 277.0
-
-[node name="Label" type="Label" parent="EnvironmentalObjects/Buildings/NinePatchRect2" unique_id=1465245589]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 23.0
-offset_right = 188.0
-offset_bottom = 73.0
-text = "ARCHERY"
-label_settings = SubResource("LabelSettings_pcp55")
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="EnvironmentalObjects/Buildings/NinePatchRect2" unique_id=2056573320]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 39.0
-offset_right = 160.0
-offset_bottom = 136.0
-icon = ExtResource("42_ai02y")
-flat = true
-expand_icon = true
-
-[node name="Label" type="Label" parent="EnvironmentalObjects/Buildings/NinePatchRect2/Button" unique_id=820066969]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 40.0
-offset_right = 71.0
-offset_bottom = 64.0
-text = "SELL"
-label_settings = SubResource("LabelSettings_11b8l")
-
-[node name="Label2" type="Label" parent="EnvironmentalObjects/Buildings/NinePatchRect2" unique_id=326369879]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 127.0
-offset_right = 188.0
-offset_bottom = 154.0
-text = "x $130"
-label_settings = SubResource("LabelSettings_g3s50")
-horizontal_alignment = 1
-
 [node name="ButtonRun" type="Button" parent="." unique_id=939225063]
 offset_left = 1029.0
 offset_top = 515.0
@@ -1240,7 +1172,6 @@ autoplay = "water"
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackHouse/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_house"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackMonastery/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_monastery"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/NinePatchRect/Button" to="EnvironmentalObjects/Buildings" method="_buy_button_pressed"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/NinePatchRect2/Button" to="EnvironmentalObjects/Buildings" method="_on_sell_button_pressed"]
 [connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]
 [connection signal="pressed" from="ButtonQuit1" to="." method="_save"]
 [connection signal="pressed" from="ButtonSettings" to="." method="_settings_pressed"]

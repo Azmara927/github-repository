@@ -1,5 +1,6 @@
-extends CanvasLayer
+extends Control
 
+@onready var mouse_click: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +12,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-# Pause button: Pauses/freezes gameplay and shows pause menu
-func _on_pause_button_pressed() -> void:
-	var pause_menu = preload("res://Scenes/pause.tscn").instantiate()
-	add_child(pause_menu)
-	get_tree().paused = true
+func _on_button_quit_pressed() -> void:
+	mouse_click.play
+	get_tree().quit()

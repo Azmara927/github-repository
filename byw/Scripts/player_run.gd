@@ -31,18 +31,19 @@ func _physics_process(delta) -> void:
 
 
 # Player interaction
-# Collecting coin
+# Collecting coin: if the player collides with the coin, then global.total coins and coins is increased by one and Global.coins_this_run is set to coins.
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("collectible"):
 		coins += 1
 		Global.total_coins_earned += 1
+# This way Global.coins is reset each time, the running scene is loaded
 		Global.coins_this_run = coins
 		label.text = str(coins)
 		PickUpSound.play()
 		area.hide()
-# Colliding with enemy
+# Colliding with enemy: player loses one heart
 	if area.is_in_group("damager"):
 		Global.lose_heart()
 		Global.save_score
-# Plays death screen
+# Loads death screen
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/death.tscn")

@@ -17,11 +17,12 @@ func _process(delta: float) -> void:
 	pass
 
 
-# XP coding
+# XP coding: every second spent in the running scene is multiplied by 17, which is displayed in the XP label.
 func _XP() -> void:
 	XP += 1 * 17
 	XP_label.text = str(XP)
 # Record XP value in global so that it can be displayed in death scene
 	Global.XP_this_run = XP
+# Saves the highest score/XP gained by the player
 	if XP > Global.high_score:
 		Global.high_score = XP

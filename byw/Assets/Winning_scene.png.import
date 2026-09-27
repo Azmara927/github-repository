@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cejw4xe3p2pfv"
-path="res://.godot/imported/NE.png-ec032ff4a1b627b510c0fd2c1111f116.ctex"
+uid="uid://drefofl02s5y5"
+path="res://.godot/imported/Winning_scene.png-3f4553f5fc258488b34a0f89ce27fbdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NE.png"
-dest_files=["res://.godot/imported/NE.png-ec032ff4a1b627b510c0fd2c1111f116.ctex"]
+source_file="res://Assets/Winning_scene.png"
+dest_files=["res://.godot/imported/Winning_scene.png-3f4553f5fc258488b34a0f89ce27fbdf.ctex"]
 
 [params]
 

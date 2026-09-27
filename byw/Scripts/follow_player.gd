@@ -2,11 +2,11 @@ extends Marker2D
 
 var distance: float
 
-
 @export var player: CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
+# Distance between player and the individual running scene
 func _ready() -> void:
 	distance = global_position.x - player.global_position.x
 

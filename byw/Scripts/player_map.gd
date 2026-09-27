@@ -4,7 +4,6 @@ var speed: float = 300.0
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
-
 # Player movement (2D top down)
 func _process(delta: float) -> void:
 	var direction: Vector2 = Vector2(0.0, 0.0)
@@ -19,10 +18,10 @@ func _process(delta: float) -> void:
 	else:
 		animation.play("idle")
 	
-	
 	velocity = speed * direction.normalized()
 	
 	move_and_slide()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

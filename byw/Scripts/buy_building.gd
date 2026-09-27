@@ -1,14 +1,11 @@
 extends Node
 
-
 @export var price: int = 100
 @export var old_building: Sprite2D 
 @export var owned_building: TextureButton
 @export var lock: TextureButton
 @export var construction_position: Vector2
 
-
-# @onready var construction_effect: Node2D = $"../Construction_effect"
 @onready var construction: AnimatedSprite2D = $"../Construction"
 @onready var price_note: NinePatchRect = $"../NinePatchRect"
 @onready var background: Node2D = $"../.."
@@ -18,7 +15,6 @@ extends Node
 @onready var  tower: TextureButton = $"../BlueTower"
 @onready var house: TextureButton = $"../BlueHouse"
 @onready var monastery: TextureButton = $"../BlueMonastery"
-
 
 
 # The buy function; when the player buys the building, the lock disappears, the black building is hidden and a blue building appears
@@ -44,6 +40,7 @@ func buy():
 		owned_building.show()
 		background.modulate.a = 1.0
 
+# checks which building was "purchased" and stores which building was purchased by changing the boolean to true.
 		if owned_building == archery:
 			Global.archery_owned = true
 		if owned_building == barracks:

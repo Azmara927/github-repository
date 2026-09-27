@@ -4,5 +4,6 @@ class_name data extends Resource
 
 const SAVE_PATH = "user://data.tres"
 
+# Saves the highscore of the game
 func save() -> void:
 	ResourceSaver.save(self, SAVE_PATH)

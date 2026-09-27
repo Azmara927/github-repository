@@ -4,7 +4,7 @@ const SAVEFILE = "user://savefile.save"
 const PLAYERFILE = "user://playfile.save"
 
 var coins_this_run: int = 0
-var total_coins_earned: int = 50
+var total_coins_earned: int = 0
 var XP_this_run: int = 0
 var high_score: int = 5
 var add_time: int = 60
@@ -20,19 +20,14 @@ var buildings = {
 	
 }
 
-
 var player_data = {
 	"lives": 5,
 	"heart_timers": [],
 	"building": []
 }
 
-func win() -> void:
-	if archery_owned and baracks_owned and castle_owned and tower_owned and tower_owned and house_owned and monastery_owned:
-			get_tree().call_deferred("change_scene_to_file","res://Scenes/Opening.tscn" )
 
-
-
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_score()
 	check_heart_revival()
@@ -40,15 +35,14 @@ func _ready() -> void:
 	print(high_score)
 
 
-# Saves game
+# Saves the hugh score and buildings of the game
 func save_score():
 	var file_save = FileAccess.open(SAVEFILE, FileAccess.WRITE)
 	file_save.store_32(high_score)
 	file_save.store_var(buildings)
-	print("oop")
-	
 
-# Loads game
+
+# Checks if the SAVEFILE exists and then loads the high score and buildings from the SAVEFILE.
 func load_score():
 	var file_load = FileAccess.open(SAVEFILE, FileAccess.READ)
 	if FileAccess.file_exists(SAVEFILE):
@@ -71,14 +65,14 @@ func load_player_data():
 		player_data["heart_timers"] = file_load.get_var()
 
 
-# What happens when the player loses a heart
+# States if the player's lives (in the player_data dictionary) are greater than one then lose a heart
 func lose_heart():
 	if player_data["lives"] > 0:
 		player_data["lives"]-= 1
 		
+# the time taken to revive a heart is 60 seconds. Take time from the system and add 60 seconds to it.
 		var revive_time = Time.get_unix_time_from_system() + add_time
-		print(Time.get_unix_time_from_system())
-		print(revive_time)
+# adds a heart timer to end of the heart_timers array when the player loses a heart
 		player_data["heart_timers"].append(revive_time)
 
 
@@ -91,9 +85,9 @@ func check_heart_revival():
 			print(current_time)
 			print(revive_time)
 			player_data["lives"] += 1
+# erases the revive time from the heart_timers array
 			player_data["heart_timers"].erase(revive_time)
 		save_score()
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

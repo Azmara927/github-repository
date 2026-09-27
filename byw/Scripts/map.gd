@@ -18,11 +18,12 @@ var total_coins_display: int = 0
 
 @export var buildings: Array[Sprite2D]
 
+
 # Called when the node enters the scene tree for the first time. (HEARTS)
 func _ready() -> void:
 	update_hearts()
 
-# buildings commenting??
+# buildings testing
 	if Global.buildings == {}:
 		for building in buildings:
 			Global.buildings[building] = false
@@ -34,7 +35,6 @@ func _ready() -> void:
 				print(buildings[iteration])
 	print(Global.buildings)
 
-
 # Total coins collected displayed in map
 	total_coins.text = str(Global.total_coins_earned)
 
@@ -42,10 +42,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Global.archery_owned and Global.baracks_owned and Global.castle_owned and Global.tower_owned and Global.house_owned and Global.monastery_owned:
-			get_tree().call_deferred("change_scene_to_file","res://Scenes/Opening.tscn" )
+			get_tree().call_deferred("change_scene_to_file","res://Scenes/Win_scene.tscn" )
 
 
-# Save button
+# Shows save panel button
 func _save() -> void:
 	mouse_click.play()
 	save.show()
@@ -57,16 +57,17 @@ func _settings_pressed() -> void:
 	help.show()
 
 
-# Run button: changes to running scene when clicked
+# Run button: changes to running scene when clicked if the player has more than zero hearts
 func _run_pressed() -> void:
 	mouse_click.play()
 	if Global.player_data["lives"] > 0:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/Running_bg.tscn")
+# If th player has less than zero hearts then the run button is disabled
 	else:
 		run_button.disabled = true
 
 
-# Display of the hearts or lives the player has
+# Updates the status of hearts: a loop that checks the number of lives (stored in the global) and reduces or increases the opacity of the lost/gained hearts accordingly.
 func update_hearts():
 	var hearts = [Heart1, Heart2, Heart3, Heart4, Heart5]
 	for i in range(5):
@@ -76,7 +77,7 @@ func update_hearts():
 			hearts[i].modulate.a = 0.5
 
 
-# Checks if the heart revival time is up and adjusts the remaining lives of the player accordingly
+# Checks if the heart revival time is up and adjusts the remaining lives of the player accordingly.
 func _on_heart_timer_timeout() -> void:
 	Global.check_heart_revival()
 	update_hearts()

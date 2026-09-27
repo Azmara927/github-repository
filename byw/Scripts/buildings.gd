@@ -2,7 +2,6 @@ extends Node2D
 
 var current_building = null
 
-# buy note
 @onready var price_note: NinePatchRect = $NinePatchRect
 @onready var background: Node2D = $".."
 @onready var building_name: Label = $NinePatchRect/Label
@@ -10,15 +9,6 @@ var current_building = null
 @onready var mouse_click: AudioStreamPlayer2D = $"../../AudioStreamPlayer2D"
 @onready var construction: AnimatedSprite2D = $Construction_effect/Construction
 @onready var total_coins_label: Label = $"../../Label2"
-
-
-# sell note
-@onready var sell_note: NinePatchRect = $NinePatchRect2
-@onready var owned_building_name: Label =$NinePatchRect2/Label
-@onready var sell_price: Label = $NinePatchRect2/Label2
-
-
-# Variables for lock button
 @onready var lock_A : TextureButton = $BlackArchery/TextureButton
 
 # Variables for buildings
@@ -39,11 +29,6 @@ var current_building = null
 @onready var blue_monastery: TextureButton = $BlueMonastery
 
 
-# Variabes for owned buildings
-@onready var owned_archery: Sprite2D = $BlackArchery/BlueArchery
-# Variables for sold buildings
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -54,7 +39,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-# The code for the functionality of the archery (building)
+# Sets the current building as archery, sets the price at $2, brings the price note close to the archery and reduces the opacity of the map.
 func _black_archery() -> void:
 	current_building = archery
 	building_name.text = str("ARCHERY")
@@ -71,7 +56,7 @@ func _black_archery() -> void:
 		price_note.show()
 
 
-# The code for the functionality of the barracks (building)
+# Sets the current building as barracks, sets the price at $5, brings the price note close to the barrack and reduces the opacity of the map.
 func _black_barracks() -> void:
 	current_building = barracks
 	background.modulate.a = 0.9
@@ -87,7 +72,7 @@ func _black_barracks() -> void:
 		price_note.show()
 
 
-# The code for the functionality of the castle (building)
+# Sets the current building as castle, sets the price at $4, brings the price note close to the castle and reduces the opacity of the map.
 func _black_castle() -> void:
 	current_building = castle
 	background.modulate.a = 0.9
@@ -103,7 +88,7 @@ func _black_castle() -> void:
 		price_note.show()
 
 
-# The code for the functionality of the tower (building)
+# Sets the current building as tower, sets the price at $2, brings the price note close to the tower and reduces the opacity of the map.
 func _black_tower() -> void:
 	current_building = tower
 	background.modulate.a = 0.9
@@ -119,7 +104,7 @@ func _black_tower() -> void:
 		price_note.show()
 
 
-# The code for the functionality of the house (building)
+# Sets the current building as house, sets the price at $3, brings the price note close to the house and reduces the opacity of the map.
 func _black_house() -> void:
 	current_building = house
 	background.modulate.a = 0.9
@@ -135,7 +120,7 @@ func _black_house() -> void:
 		price_note.show()
 
 
-# The code for the functionality of the monastery (building)
+# Sets the current building as monastery, sets the price at $4, brings the price note close to the monastery and reduces the opacity of the map.
 func _black_monastery() -> void:
 	current_building = monastery
 	building_name.text = str("MONASTERY")
@@ -151,6 +136,7 @@ func _black_monastery() -> void:
 		price_note.show()
 
 
+# states that if no building is clicked then do nothing, but if a building is clicked then "buy" the building
 func _buy_button_pressed() -> void:
 	if current_building == null:
 		return

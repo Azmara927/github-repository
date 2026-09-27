@@ -21,11 +21,6 @@ func _on_button_pressed() -> void:
 	help.hide()
 
 
-# Hslider for music volume adjustment
+# Hslider for sound volume adjustment
 func _on_master_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus_index, linear_to_db(value))
-
-
-# Hslider for SFX volume adjustment
-func _on_sfx_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(SFX_bus_index, linear_to_db(value))

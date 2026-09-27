@@ -13,7 +13,7 @@ var score: int = 0
 
 # For the background to move along with the character smootlhy
 func _process(delta):
-# GROUND
+# Ground
 	if bg_2.global_position.x <= -1550:
 		bg_2.global_position.x = 0
 		for object in bg_2.get_children():
@@ -25,7 +25,7 @@ func _ready() -> void:
 	pass
 
 
-# Spawn land
+# Spawns land
 func spawn_land() -> void:
 	var land = land_scenes[randi_range(0, len(land_scenes) - 1)].instantiate()
 	print("spawn")
@@ -34,5 +34,6 @@ func spawn_land() -> void:
 	call_deferred("add_child", land)
 
 
+# Starts to spawn land
 func _start_land_spawn(body: Node2D) -> void:
 	spawn_land()

@@ -1,8 +1,6 @@
 extends Control
 
-
 @onready var pause_menu = "pause.tscn"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
