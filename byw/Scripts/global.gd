@@ -4,7 +4,7 @@ const SAVEFILE = "user://savefile.save"
 const PLAYERFILE = "user://playfile.save"
 
 var coins_this_run: int = 0
-var total_coins_earned: int = 0
+var total_coins_earned: int = 50
 var XP_this_run: int = 0
 var high_score: int = 5
 var add_time: int = 60
@@ -23,12 +23,15 @@ var buildings = {
 
 var player_data = {
 	"lives": 5,
-	"heart_timers": []
+	"heart_timers": [],
+	"building": []
 }
 
+func win() -> void:
+	if archery_owned and baracks_owned and castle_owned and tower_owned and tower_owned and house_owned and monastery_owned:
+			get_tree().call_deferred("change_scene_to_file","res://Scenes/Opening.tscn" )
 
-# @export var coins_run = Label
-# @export var hearts = HBoxContainer
+
 
 func _ready() -> void:
 	load_score()

@@ -9,7 +9,7 @@ var current_building = null
 @onready var price: Label = $NinePatchRect/Label2
 @onready var mouse_click: AudioStreamPlayer2D = $"../../AudioStreamPlayer2D"
 @onready var construction: AnimatedSprite2D = $Construction_effect/Construction
-@onready var total_coins_label: Label = $"../Label2"
+@onready var total_coins_label: Label = $"../../Label2"
 
 
 # sell note
@@ -22,12 +22,13 @@ var current_building = null
 @onready var lock_A : TextureButton = $BlackArchery/TextureButton
 
 # Variables for buildings
-@onready var archery: Sprite2D = $BlackArchery
-@onready var barracks: Sprite2D = $BlackBarracks
-@onready var castle: Sprite2D = $BlackCastle
-@onready var tower: Sprite2D = $BlackTower
-@onready var house: Sprite2D = $BlackHouse
-@onready var monastery: Sprite2D = $BlackMonastery
+@export var archery: Sprite2D
+@export var barracks: Sprite2D
+@export var castle: Sprite2D 
+@export var tower: Sprite2D
+@export var house: Sprite2D
+@export var monastery: Sprite2D
+
 
 # Variables for owned buildings
 @onready var blue_archery: TextureButton = $BlueArchery
@@ -41,8 +42,6 @@ var current_building = null
 # Variabes for owned buildings
 @onready var owned_archery: Sprite2D = $BlackArchery/BlueArchery
 # Variables for sold buildings
-
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -156,101 +155,4 @@ func _buy_button_pressed() -> void:
 	if current_building == null:
 		return
 	current_building.buy()
-	total_coins_label.text = str(Global.total_coins_earned)
-
-
-func _on_blue_archery_pressed() -> void:
-	current_building = blue_archery
-	background.modulate.a = 0.9
-	owned_building_name.text = str("ARCHERY")
-	sell_price.text = str("x $8")
-	sell_note.position = Vector2(336,113)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_blue_barracks_pressed() -> void:
-	current_building = blue_barracks
-	background.modulate.a = 0.9
-	owned_building_name.text = str("BARRACKS")
-	sell_price.text = str("x $10")
-	sell_note.position = Vector2(632,329)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_blue_castle_pressed() -> void:
-	current_building = blue_castle
-	background.modulate.a = 0.9
-	owned_building_name.text = str("CASTLE")
-	sell_price.text = str("x $10")
-	sell_note.position = Vector2(515,378)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_blue_tower_pressed() -> void:
-	current_building = blue_tower
-	background.modulate.a = 0.9
-	owned_building_name.text = str("TOWER")
-	sell_price.text = str("x $6")
-	sell_note.position = Vector2(220,362)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_blue_house_pressed() -> void:
-	current_building = blue_house
-	background.modulate.a = 0.9
-	owned_building_name.text = str("HOUSE")
-	sell_price.text = str("x $5")
-	sell_note.position = Vector2(325,366)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_blue_monastery_pressed() -> void:
-	current_building = blue_monastery
-	background.modulate.a = 0.9
-	owned_building_name.text = str("MONASTERY")
-	sell_price.text = str("x $10")
-	sell_note.position = Vector2(741,70)
-	if sell_note.visible:
-		mouse_click.play()
-		sell_note.hide()
-		background.modulate.a = 1.0
-	else:
-		mouse_click.play()
-		sell_note.show()
-
-
-func _on_sell_button_pressed() -> void:
-	if current_building == null:
-		return
-	current_building.sell()
 	total_coins_label.text = str(Global.total_coins_earned)

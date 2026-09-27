@@ -7,6 +7,7 @@ extends Node2D
 # The background music
 func _ready() -> void:
 	bg_music.autoplay
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

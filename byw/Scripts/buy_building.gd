@@ -12,9 +12,16 @@ extends Node
 @onready var construction: AnimatedSprite2D = $"../Construction"
 @onready var price_note: NinePatchRect = $"../NinePatchRect"
 @onready var background: Node2D = $"../.."
+@onready var archery: TextureButton = $"../BlueArchery"
+@onready var barracks: TextureButton = $"../BlueBarracks"
+@onready var castle: TextureButton = $"../BlueCastle"
+@onready var  tower: TextureButton = $"../BlueTower"
+@onready var house: TextureButton = $"../BlueHouse"
+@onready var monastery: TextureButton = $"../BlueMonastery"
 
 
-# The buy function; when the player buys the building, the lock disappears, the black building is hidden
+
+# The buy function; when the player buys the building, the lock disappears, the black building is hidden and a blue building appears
 func buy():
 	if Global.total_coins_earned >= price:
 		lock.hide()
@@ -36,4 +43,16 @@ func buy():
 		construction.hide()
 		owned_building.show()
 		background.modulate.a = 1.0
-		Global.save_score()
+
+		if owned_building == archery:
+			Global.archery_owned = true
+		if owned_building == barracks:
+			Global.baracks_owned = true
+		if owned_building == castle:
+			Global.castle_owned = true
+		if owned_building == tower:
+			Global.tower_owned = true
+		if owned_building == house:
+			Global.house_owned = true
+		if owned_building == monastery:
+			Global.monastery_owned = true

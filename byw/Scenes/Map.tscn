@@ -26,23 +26,16 @@
 [ext_resource type="Texture2D" uid="uid://dua330573to40" path="res://Assets/Button_brown.png" id="20_5aq6m"]
 [ext_resource type="Texture2D" uid="uid://0hmjoh0tfl67" path="res://Assets/Buildings/Black_monastery.png" id="20_cs4iy"]
 [ext_resource type="AudioStream" uid="uid://gts74qkxo53y" path="res://Assets/Sounds/mouse_click.mp3" id="21_5aq6m"]
-[ext_resource type="Script" uid="uid://di4q1hh28scsl" path="res://Scripts/sell_building.gd" id="21_ai02y"]
 [ext_resource type="Texture2D" uid="uid://ced5ysue2y607" path="res://Assets/Lock_grey.png" id="21_uylqo"]
 [ext_resource type="Texture2D" uid="uid://yvq820vm507r" path="res://Assets/Buildings/Blue_archery.png" id="22_bnu4f"]
 [ext_resource type="Texture2D" uid="uid://0pu41nv5g7p1" path="res://Assets/Dust.png" id="22_ov5w8"]
 [ext_resource type="PackedScene" uid="uid://cy65dsndae8e4" path="res://Scenes/settings.tscn" id="23_dumge"]
-[ext_resource type="Texture2D" uid="uid://c4wahc54kbeju" path="res://Assets/Buildings/Red_archery.png" id="23_ov5w8"]
 [ext_resource type="PackedScene" uid="uid://do3elox8qhywb" path="res://Scenes/save.tscn" id="24_pfmft"]
-[ext_resource type="Texture2D" uid="uid://dy0t5xxkby5en" path="res://Assets/Buildings/Red_barracks.png" id="25_ckgix"]
 [ext_resource type="Texture2D" uid="uid://ddpgmwvafo7qc" path="res://Assets/Buildings/Blue_barracks.png" id="26_t8u3c"]
 [ext_resource type="Texture2D" uid="uid://vywifnruke33" path="res://Assets/Buildings/Blue_castle.png" id="28_n5cpx"]
-[ext_resource type="Texture2D" uid="uid://c7l6nwv5elonc" path="res://Assets/Buildings/Red_castle.png" id="29_ai02y"]
 [ext_resource type="Texture2D" uid="uid://d0w2w5plj1mj0" path="res://Assets/Buildings/Blue_tower.png" id="31_pcp55"]
-[ext_resource type="Texture2D" uid="uid://dxlx75tujt04j" path="res://Assets/Buildings/Red_tower.png" id="32_11b8l"]
 [ext_resource type="Texture2D" uid="uid://bs2r4sdk35h0a" path="res://Assets/Buildings/Blue_house.png" id="34_g3s50"]
-[ext_resource type="Texture2D" uid="uid://bh4ohue6vbk0s" path="res://Assets/Buildings/Red_house.png" id="35_j7f23"]
 [ext_resource type="Texture2D" uid="uid://dhoarl34mum3n" path="res://Assets/Buildings/Blue_monastery.png" id="37_0j5ni"]
-[ext_resource type="Texture2D" uid="uid://cpva47uy27sic" path="res://Assets/Buildings/Red_monastery.png" id="38_2gi4k"]
 [ext_resource type="PackedScene" uid="uid://yquo6tvcj8l8" path="res://Scenes/building_sell.tscn" id="41_n5cpx"]
 [ext_resource type="Texture2D" uid="uid://dh0uqjtydr5dd" path="res://Assets/Button_red.png" id="42_ai02y"]
 [ext_resource type="Texture2D" uid="uid://kr5wi3mp48g1" path="res://Assets/Water_splash.png" id="46_pcp55"]
@@ -566,7 +559,7 @@ region = Rect2(576, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_nr4qj"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_ckgix")
 }, {
 "duration": 1.0,
@@ -814,9 +807,15 @@ position = Vector2(794, 276)
 sprite_frames = SubResource("SpriteFrames_71s36")
 autoplay = "default"
 
-[node name="Buildings" type="Node2D" parent="EnvironmentalObjects" unique_id=649981577]
+[node name="Buildings" type="Node2D" parent="EnvironmentalObjects" unique_id=649981577 node_paths=PackedStringArray("archery", "barracks", "castle", "tower", "house", "monastery")]
 y_sort_enabled = true
 script = ExtResource("16_nitb1")
+archery = NodePath("BlackArchery")
+barracks = NodePath("BlackBarracks")
+castle = NodePath("BlackCastle")
+tower = NodePath("BlackTower")
+house = NodePath("BlackHouse")
+monastery = NodePath("BlackMonastery")
 
 [node name="BlackArchery" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=1069802119 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(164, 94)
@@ -841,7 +840,7 @@ stretch_mode = 0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EnvironmentalObjects/Buildings/BlackArchery" unique_id=1320108043]
 stream = ExtResource("21_5aq6m")
 
-[node name="BlueArchery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1191201917 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueArchery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1191201917]
 visible = false
 offset_left = 71.0
 offset_top = -44.0
@@ -850,19 +849,6 @@ offset_bottom = 212.0
 scale = Vector2(1.1510415, 1.015625)
 texture_normal = ExtResource("22_bnu4f")
 stretch_mode = 4
-script = ExtResource("21_ai02y")
-price = 8
-owned_building = NodePath(".")
-sell_building = NodePath("../RedArchery")
-
-[node name="RedArchery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1816081247]
-visible = false
-offset_left = 55.0
-offset_top = -32.999992
-offset_right = 247.0
-offset_bottom = 223.0
-scale = Vector2(1.1354166, 0.9999998)
-texture_normal = ExtResource("23_ov5w8")
 
 [node name="BlackBarracks" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=1356545040 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(966, 437.75)
@@ -884,7 +870,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueBarracks" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=466992212 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueBarracks" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=466992212]
 visible = false
 offset_left = 829.0
 offset_top = 293.0
@@ -893,20 +879,6 @@ offset_bottom = 544.00586
 scale = Vector2(1.4374995, 1.1513674)
 texture_normal = ExtResource("26_t8u3c")
 ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("21_ai02y")
-price = 10
-owned_building = NodePath(".")
-sell_building = NodePath("../RedBarracks")
-
-[node name="RedBarracks" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=274247434]
-visible = false
-offset_left = 839.00006
-offset_top = 293.00006
-offset_right = 1031.0
-offset_bottom = 549.00006
-scale = Vector2(1.3124994, 1.1523436)
-texture_normal = ExtResource("25_ckgix")
 stretch_mode = 0
 
 [node name="BlackCastle" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=1245226057 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
@@ -927,7 +899,7 @@ offset_right = 113.71254
 offset_bottom = 136.41391
 texture_normal = ExtResource("21_uylqo")
 
-[node name="BlueCastle" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1926965508 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueCastle" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1926965508]
 visible = false
 offset_left = 442.0
 offset_top = 98.0
@@ -935,20 +907,6 @@ offset_right = 762.0
 offset_bottom = 354.0
 scale = Vector2(1.0625, 1.0585939)
 texture_normal = ExtResource("28_n5cpx")
-script = ExtResource("21_ai02y")
-price = 10
-owned_building = NodePath(".")
-sell_building = NodePath("../RedCastle")
-
-[node name="RedCastle" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1350921246]
-visible = false
-offset_left = 440.0
-offset_top = 99.0
-offset_right = 760.0
-offset_bottom = 355.0
-scale = Vector2(1.06875, 1.0546875)
-texture_normal = ExtResource("29_ai02y")
-stretch_mode = 0
 
 [node name="BlackTower" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=2077395167 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 y_sort_enabled = true
@@ -977,7 +935,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueTower" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1510451753 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueTower" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1510451753]
 visible = false
 offset_left = 43.0
 offset_top = 263.00003
@@ -985,20 +943,6 @@ offset_right = 171.0
 offset_bottom = 519.0
 scale = Vector2(1.2421874, 1.2968748)
 texture_normal = ExtResource("31_pcp55")
-script = ExtResource("21_ai02y")
-price = 6
-owned_building = NodePath(".")
-sell_building = NodePath("../RedTower")
-
-[node name="RedTower" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1763982132]
-visible = false
-offset_left = 45.000008
-offset_top = 264.00006
-offset_right = 173.0
-offset_bottom = 520.00006
-scale = Vector2(1.234375, 1.2968748)
-texture_normal = ExtResource("32_11b8l")
-stretch_mode = 0
 
 [node name="BlackHouse" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=1946692408 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(604, 471)
@@ -1020,7 +964,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueHouse" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1640151592 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueHouse" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1640151592]
 visible = false
 offset_left = 516.0
 offset_top = 360.0
@@ -1028,20 +972,6 @@ offset_right = 644.0
 offset_bottom = 552.0
 scale = Vector2(1.3437498, 1.1614581)
 texture_normal = ExtResource("34_g3s50")
-script = ExtResource("21_ai02y")
-price = 5
-owned_building = NodePath(".")
-sell_building = NodePath("../RedHouse")
-
-[node name="RedHouse" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1054123606]
-visible = false
-offset_left = 519.0
-offset_top = 359.0
-offset_right = 647.0
-offset_bottom = 551.0
-scale = Vector2(1.3437499, 1.1666667)
-texture_normal = ExtResource("35_j7f23")
-stretch_mode = 0
 
 [node name="BlackMonastery" type="Sprite2D" parent="EnvironmentalObjects/Buildings" unique_id=2053013228 node_paths=PackedStringArray("old_building", "owned_building", "lock")]
 position = Vector2(1032.5, 112.5)
@@ -1063,7 +993,7 @@ texture_normal = ExtResource("21_uylqo")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlueMonastery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=513409752 node_paths=PackedStringArray("owned_building", "sell_building")]
+[node name="BlueMonastery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=513409752]
 visible = false
 offset_left = 923.0
 offset_top = -59.0
@@ -1071,23 +1001,10 @@ offset_right = 1115.0
 offset_bottom = 261.0
 scale = Vector2(1.1406252, 1.0757811)
 texture_normal = ExtResource("37_0j5ni")
-script = ExtResource("21_ai02y")
-price = 10
-owned_building = NodePath(".")
-sell_building = NodePath("../RedMonastery")
-
-[node name="RedMonastery" type="TextureButton" parent="EnvironmentalObjects/Buildings" unique_id=1172008618]
-visible = false
-offset_left = 920.0
-offset_top = -57.0
-offset_right = 1112.0
-offset_bottom = 263.0
-scale = Vector2(1.1614584, 1.053125)
-texture_normal = ExtResource("38_2gi4k")
-stretch_mode = 0
 
 [node name="Construction" type="AnimatedSprite2D" parent="EnvironmentalObjects/Buildings" unique_id=964340413]
 visible = false
+z_index = 8
 position = Vector2(161, 124.999985)
 scale = Vector2(2.2976546, 2.269171)
 sprite_frames = SubResource("SpriteFrames_nr4qj")
@@ -1283,6 +1200,7 @@ offset_bottom = 7.0
 visible = false
 stream = ExtResource("21_5aq6m")
 autoplay = true
+bus = &"SFX"
 
 [node name="Save_option" parent="." unique_id=280311521 instance=ExtResource("24_pfmft")]
 visible = false
@@ -1315,17 +1233,12 @@ animation = &"water"
 autoplay = "water"
 
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackArchery/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_archery"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueArchery" to="EnvironmentalObjects/Buildings" method="_on_blue_archery_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackBarracks/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_barracks"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueBarracks" to="EnvironmentalObjects/Buildings" method="_on_blue_barracks_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackCastle/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_castle"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueCastle" to="EnvironmentalObjects/Buildings" method="_on_blue_castle_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackTower/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_tower"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueTower" to="EnvironmentalObjects/Buildings" method="_on_blue_tower_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackHouse/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_house"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueHouse" to="EnvironmentalObjects/Buildings" method="_on_blue_house_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/BlackMonastery/TextureButton" to="EnvironmentalObjects/Buildings" method="_black_monastery"]
-[connection signal="pressed" from="EnvironmentalObjects/Buildings/BlueMonastery" to="EnvironmentalObjects/Buildings" method="_on_blue_monastery_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/NinePatchRect/Button" to="EnvironmentalObjects/Buildings" method="_buy_button_pressed"]
 [connection signal="pressed" from="EnvironmentalObjects/Buildings/NinePatchRect2/Button" to="EnvironmentalObjects/Buildings" method="_on_sell_button_pressed"]
 [connection signal="pressed" from="ButtonRun" to="." method="_run_pressed"]

@@ -1,6 +1,7 @@
 extends Node2D
 
 var revive_time: float = Time.get_unix_time_from_system() + 5
+var total_coins_display: int = 0
 
 @onready var Heart5: TextureRect = $HBoxContainer/TextureRect5
 @onready var Heart4: TextureRect = $HBoxContainer/TextureRect4
@@ -35,13 +36,13 @@ func _ready() -> void:
 
 
 # Total coins collected displayed in map
-	Global.total_coins_earned = Global.total_coins_earned + Global.coins_this_run
 	total_coins.text = str(Global.total_coins_earned)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Global.archery_owned and Global.baracks_owned and Global.castle_owned and Global.tower_owned and Global.house_owned and Global.monastery_owned:
+			get_tree().call_deferred("change_scene_to_file","res://Scenes/Opening.tscn" )
 
 
 # Save button

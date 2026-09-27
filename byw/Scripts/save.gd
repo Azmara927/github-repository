@@ -16,3 +16,7 @@ func _process(delta: float) -> void:
 # Go back button: when clicked hides the save menu
 func _back() -> void:
 	save.hide()
+
+# Quit button: quits the game
+func _on_button_2_pressed() -> void:
+	get_tree().quit()

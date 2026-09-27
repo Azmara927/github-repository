@@ -34,8 +34,10 @@ func _physics_process(delta) -> void:
 # Collecting coin
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("collectible"):
-		Global.coins_this_run += 1
-		label.text = str(Global.coins_this_run)
+		coins += 1
+		Global.total_coins_earned += 1
+		Global.coins_this_run = coins
+		label.text = str(coins)
 		PickUpSound.play()
 		area.hide()
 # Colliding with enemy

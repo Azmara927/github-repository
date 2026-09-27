@@ -6,10 +6,6 @@
 [ext_resource type="FontFile" uid="uid://dav6wc1juydsx" path="res://Assets/Fonts/Chelsea_Market/ChelseaMarket-Regular.ttf" id="3_0mspw"]
 [ext_resource type="Texture2D" uid="uid://b6cxsv36osngn" path="res://Assets/Icon_back.png" id="5_jtidj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_7pi6b"]
-font = ExtResource("3_0mspw")
-font_size = 34
-
 [sub_resource type="LabelSettings" id="LabelSettings_jtidj"]
 font = ExtResource("3_0mspw")
 font_size = 40
@@ -28,33 +24,12 @@ position = Vector2(550.00006, 327.5)
 scale = Vector2(2.385417, 2.5156252)
 texture = ExtResource("1_mqumr")
 
-[node name="Button" type="Button" parent="." unique_id=1407919268]
-layout_mode = 0
-offset_left = 433.0
-offset_top = 82.0
-offset_right = 722.0
-offset_bottom = 354.0
-icon = ExtResource("2_42gct")
-flat = true
-expand_icon = true
-
-[node name="Label" type="Label" parent="Button" unique_id=1197882736]
-layout_mode = 0
-offset_left = 61.0
-offset_top = 97.0
-offset_right = 203.0
-offset_bottom = 229.0
-text = "SAVE
-& QUIT"
-label_settings = SubResource("LabelSettings_7pi6b")
-horizontal_alignment = 1
-
 [node name="Button2" type="Button" parent="." unique_id=804124931]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 270.0
-offset_right = 712.0
-offset_bottom = 595.0
+offset_left = 421.0
+offset_top = 141.0
+offset_right = 697.0
+offset_bottom = 466.0
 icon = ExtResource("2_42gct")
 flat = true
 expand_icon = true
@@ -78,4 +53,5 @@ icon = ExtResource("5_jtidj")
 flat = true
 expand_icon = true
 
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_back"]
